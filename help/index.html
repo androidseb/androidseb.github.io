@@ -6,53 +6,294 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>Map Marker FAQ/help for iOS</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link href="http://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" type="text/css"/>
-	<meta name="description" content="The FAQ/help for Map Marker on iOS" />
-	<meta name="keywords" content="Map Marker,Your,places,organizer" />
+	<link href="http://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" type="text/css"
+	/>
+	<meta name="description" content="The FAQ/help for Map Marker" />
+	<meta name="keywords" content="Map Marker,places,organizer" />
+	<script type="text/javascript">
+		function getURLParameter(sParam) {
+			let sPageURL = window.location.search.substring(1);
+			let sURLVariables = sPageURL.split('&');
+			for (let i = 0; i < sURLVariables.length; i++) {
+				var sParameterName = sURLVariables[i].split('=');
+				if (sParameterName[0] === sParam) {
+					return sParameterName[1];
+				}
+			}
+			return null;
+		}
+
+		function isNoDevice() {
+			let deviceParam = getURLParameter('device');
+			return deviceParam == null || !isDeviceAndroid() && !isDeviceIOS();
+		}
+
+		function isDeviceAll() {
+			return isDeviceAndroid() || isDeviceIOS();
+		}
+
+		function isDeviceAndroid() {
+			let deviceParam = getURLParameter('device');
+			return deviceParam === 'android';
+		}
+
+		function isDeviceIOS() {
+			let deviceParam = getURLParameter('device');
+			return deviceParam === 'ios';
+		}
+
+		function getCssStyleForVisible(_isVisibleFunc) {
+			if (_isVisibleFunc()) {
+				return '{ display: block; } ';
+			} else {
+				return '{ display: none; } ';
+			}
+		}
+	</script>
+
 </head>
 
 <body>
-	<h1>Map Marker FAQ/help for iOS</h1>
-	<h2>How to sync a local map folder on the cloud</h2>
-	<ul>
-	<li>open the left drawer</li>
-	<li>click on the map file to open the file options menu</li>
-	<li>select the "cloud sync" option</li>
-	</ul>
-	<h2>How to create a new map folder on the cloud</h2>
-	<ul>
-	<li>open the left drawer</li>
-	<li>click on the map file to open the file options menu</li>
-	<li>select the "create map file" option</li>
-	<li>select "create cloud map"</li>
-	</ul>
-	<h2>How to share your map cloud folder with other people on the cloud</h2>
-	<ul>
-	<li>open the left drawer</li>
-	<li>click on the map file to open the file options menu</li>
-	<li>select "share cloud map"</li>
-	<li>open with the Google Drive app</li>
-	<li>open the cloud folder details</li>
-	<li>select "add people" and add the people you want to share your cloud map with<br />and then for your friends, once they have Map Marker installed, they must
-	<ul>
-	<li>open the left drawer</li>
-	<li>select the "open map file" option</li>
-	<li>select the "open cloud map" option</li>
-	<li>select "Google Drive"</li>
-	<li>select the map you shared from the list</li>
-	</ul>
-	</li>
-	</ul>
-	<h2>How do I add locations on Google Maps?</h2>
-	<p>Map Marker does not provide such features. Instead, try using one of those links:</p>
-	<ul>
-	<li><a href="https://www.google.com/mapmaker">https://www.google.com/mapmaker</a></li>
-	<li><a href="https://www.google.ca/mybusiness">https://www.google.ca/mybusiness</a></li>
-	<li><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.vega">https://play.google.com/store/apps/details?id=com.google.android.apps.vega</a></li>
-	</ul>
-	<h2>A place in Google Maps has wrong/inaccurate data, how do I fix it?</h2>
-	<p>Map Marker does not interact with Google Maps data, instead, try using the Google platform:<br />go on Google Maps from a desktop computer: <a href="https://maps.google.com">https://maps.google.com</a><br />click the location that needs fixing<br />click "suggest an edit"</p>
-	<p>&nbsp;</p>
+	<script type="text/javascript">
+		let css = '';
+		css += '.devices_no ' + getCssStyleForVisible(isNoDevice);
+		css += '.devices_all ' + getCssStyleForVisible(isDeviceAll);
+		css += '.devices_android ' + getCssStyleForVisible(isDeviceAndroid);
+		css += '.devices_ios ' + getCssStyleForVisible(isDeviceIOS);
+		let head = document.head || document.getElementsByTagName('head')[0];
+		let style = document.createElement('style');
+		style.type = 'text/css';
+		if (style.styleSheet) {
+			style.styleSheet.cssText = css;
+		} else {
+			style.appendChild(document.createTextNode(css));
+		}
+		head.appendChild(style);
+	</script>
+	<div style="min-width: 300px; max-width: 1280px; padding-bottom: 200px;">
+		<a href="../index.html">Home</a>
+		<a class="devices_all" href="./index.html">Help Center</a>
+		<h1 class="devices_no">Map Marker Help Center</h1>
+		<div class="devices_no">
+			To get started with the help center, choose the platform you are using:
+			<br>
+			<ul>
+				<li>
+					<a href="./index.html?device=android">Android</a>
+				</li>
+				<li>
+					<a href="./index.html?device=ios">iOS</a>
+				</li>
+			</ul>
+		</div>
+		<div class="devices_all" style="padding: 16px;">
+			<h1 class="devices_android">Map Marker help center for Android</h1>
+			<h1 class="devices_ios">Map Marker help center for iOS</h1>
+			<div style="background: lightgray; padding-top: 16px; padding: 16px;">
+				<h2>Manual</h2>
+				<ul>
+					<li>Creating markers
+						<a href="#creatingmarkers">view</a>
+					</li>
+					<ul>
+						<li>Creating a new marker on the map
+							<a href="#creatingmarkers">view</a>
+						</li>
+						<li>Creating a new marker with search
+							<a href="#creatingmarkers">view</a>
+						</li>
+						<li>Creating a new marker from an existing location on the map
+							<a href="#creatingmarkers">view</a>
+						</li>
+					</ul>
+					<li>Importing and exporting your maps
+						<a href="#importexport">view</a>
+					</li>
+					<li>Syncing and collaborating
+						<a href="#syncing">view</a>
+					</li>
+					<li>Creating folders and editing folders
+						<a href="#editingfolders">view</a>
+					</li>
+					<li>Presets, templates and bulk icons with folders
+						<a href="#templates">view</a>
+					</li>
+					<li>Creating lines and polygons
+						<a href="#polylinesandpolygons">view</a>
+					</li>
+					<li>How to sync a local map folder on the cloud
+						<a href="#uploadcloudmap">view</a>
+					</li>
+					<li>How to create a new map folder on the cloud
+						<a href="#createcloudmap">view</a>
+					</li>
+					<li>How to share your map cloud folder with other people on the cloud
+						<a href="#sharecloudmap">view</a>
+					</li>
+					<div class="devices_android">
+						<li>How to restore a previous version from history?
+							<a href="#restorefromhistory">view</a>
+						</li>
+						<li>How to export/share your markers?
+							<a href="#exportfiles">view</a>
+						</li>
+						<li>How to import your markers from a KML, KMZ or CSV file?
+							<a href="#importfiles">view</a>
+						</li>
+						<li>How to use offline maps?
+							<a href="#offlinemaps">view</a>
+						</li>
+						<li>How can I import my starred locations from Google Maps (locations marked with a star on Google Maps)?
+							<a href="#googlemapsdataimport">view</a>
+						</li>
+					</div>
+				</ul>
+				<h2>FAQ</h2>
+				<ul>
+					<li>How do I add locations on Google Maps?
+						<a href="#googlemapsdataadd">view</a>
+					</li>
+					<li>A place in Google Maps has wrong/inaccurate data, how do I fix it?
+						<a href="#googlemapsdatafix">view</a>
+					</li>
+				</ul>
+				<div class="devices_android">
+					<h2>Known issues</h2>
+					<ul>
+						<li>Problems with Google Earth</li>
+						<li>Problems with Google My Maps</li>
+					</ul>
+				</div>
+			</div>
+			<a name="uploadcloudmap"></a>
+			<h2>How to sync a local map folder on the cloud</h2>
+			<ol>
+				<li>Open the left drawer</li>
+				<li>Click on the map file to open the file options menu</li>
+				<li>Select the "cloud sync" option</li>
+				<li>Select "Google Drive"</li>
+				<li>Select your account</li>
+				<li>Select the folder where you want the cloud folder to be saved</li>
+				<li>Click ok</li>
+			</ol>
+			<a name="createcloudmap"></a>
+			<h2>How to create a new map folder on the cloud</h2>
+			<ol>
+				<li>Open the left drawer</li>
+				<li>Click on the map file to open the file options menu</li>
+				<li>Select the "create map file" option</li>
+				<li>Select "create cloud map"</li>
+				<li>Select "Google Drive"</li>
+				<li>Select your account</li>
+				<li>select the folder where you want the cloud folder to be saved</li>
+				<li>Click ok</li>
+			</ol>
+			<a name="sharecloudmap"></a>
+			<h2>How to share your map cloud folder with other people on the cloud</h2>
+			<ol>
+				<li>Open the left drawer</li>
+				<li>Click on the map file to open the file options menu</li>
+				<li>Select "share cloud map"</li>
+				<li>Open with the Google Drive app</li>
+				<li>Open the cloud folder details</li>
+				<li>Select "add people" and add the people you want to share your cloud map with and then for your friends, once they have
+					Map Marker installed, they must
+					<ol>
+						<li>Open the left drawer</li>
+						<li>Select the "open map file" option</li>
+						<li>Select the "open cloud map" option</li>
+						<li>Select "Google Drive"</li>
+						<li>Select the map you shared from the list</li>
+					</ol>
+				</li>
+			</ol>
+			<a name="restorefromhistory"></a>
+			<h2>How to restore a previous version from history?</h2>
+			<ol class="devices_android">
+				<li>open the left drawer</li>
+				<li>click on the map file to open the file options menu</li>
+				<li>select the "advanced" option</li>
+				<li>select the "view history/restore" option</li>
+				<li>select the version to restore from the list</li>
+			</ol>
+			<p class="devices_ios">This feature is not available on iOS yet.</p>
+			<a name="exportfiles"></a>
+			<h2>How to export/share your markers?</h2>
+			<ol class="devices_android">
+				<li>Click the "share" button of the main action bar (last button)</li>
+				<li>Select "All markers and folders"</li>
+				<li>Select the format of export</li>
+				<li>Select the app to export to (Gmail, Google Drive, Dropbox, etc.)</li>
+			</ol>
+			<p class="devices_ios">This feature is not available on iOS yet.</p>
+			<a name="importfiles"></a>
+			<h2>How to import your markers from a KML, KMZ or CSV file?</h2>
+			<ol class="devices_android">
+				<li>Download the file to your phone</li>
+				<li>Open the side drawer by clicking the left button of the main action bar</li>
+				<li>Open the settings by clicking "settings"</li>
+				<li>Scroll down and click "Import/Export"</li>
+				<li>Select "Import"</li>
+				<li>Select the file to import from the in-app file explorer</li>
+			</ol>
+			<p class="devices_ios">This feature is not available on iOS yet.</p>
+			<a name="offlinemaps"></a>
+			<h2>How to use offline maps?</h2>
+			<ol class="devices_android">
+				<li>Download map files manually from here:
+					<a href="http://ftp-stud.hs-esslingen.de/pub/Mirrors/download.mapsforge.org/maps/">http://ftp-stud.hs-esslingen.de/pub/Mirrors/download.mapsforge.org/maps/</a>
+				</li>
+				<li>Once you have downloaded the map files, put them in a specific folder</li>
+				<li>Open Map Marker</li>
+				<li>Open the side drawer</li>
+				<li>Click settings</li>
+				<li>Scroll down to the "Offline maps" section</li>
+				<li>Click "Storage folder"</li>
+				<li>Select the folder where the offline map files are</li>
+				<li>Go back to the main view and open the side drawer</li>
+				<li>Click "Map type"</li>
+				<li>Select "Offline (Mapsforge BETA)"</li>
+			</ol>
+			<p class="devices_ios">This feature is not available on iOS yet.</p>
+			<a name="googlemapsdataimport"></a>
+			<h2>How can I import my starred locations from Google Maps (locations marked with a star on Google Maps)?</h2>
+			<ol class="devices_android">
+				<li>go to
+					<a href="https://www.google.com/bookmarks/">https://www.google.com/bookmarks/</a>
+				</li>
+				<li>select "export bookmarks", you will obtain a file named "GoogleBookmarks.html"</li>
+				<li>copy this file on your phone or send it to yourself by email and try to open it (either from a file</li>
+				<li>explorer or by clicking the attachment from your email app)</li>
+				<li>select Map Marker to open it and the import will start</li>
+			</ol>
+			<p class="devices_ios">This feature is not available on iOS yet.</p>
+			<a name="googlemapsdataadd"></a>
+			<h2>How do I add locations on Google Maps?</h2>
+			<p>Map Marker does not provide such features. Instead, try using one of those links:</p>
+			<ul>
+				<li>
+					<a href="https://www.google.com/mapmaker">https://www.google.com/mapmaker</a>
+				</li>
+				<li>
+					<a href="https://www.google.ca/mybusiness">https://www.google.ca/mybusiness</a>
+				</li>
+				<li>
+					<a href="https://play.google.com/store/apps/details?id=com.google.android.apps.vega">https://play.google.com/store/apps/details?id=com.google.android.apps.vega</a>
+				</li>
+			</ul>
+			<a name="googlemapsdatafix"></a>
+			<h2>A place in Google Maps has wrong/inaccurate data, how do I fix it?</h2>
+			<p>Map Marker does not interact with Google Maps data, instead, try using the Google platform:
+				<ul>
+					<li>go on Google Maps from a desktop computer:
+						<a href="https://maps.google.com">https://maps.google.com</a>
+					</li>
+					<li>click the location that needs fixing</li>
+					<li>click "suggest an edit"</li>
+				</ul>
+			</p>
+		</div>
+	</div>
 </body>
 
 </html>
