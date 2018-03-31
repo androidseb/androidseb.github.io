@@ -1,0 +1,18 @@
+{
+  "main.css": "static/css/main.6f664c80.css",
+  "main.css.map": "static/css/main.6f664c80.css.map",
+  "main.js": "static/js/main.19f7ac7b.js",
+  "main.js.map": "static/js/main.19f7ac7b.js.map",
+  "static/media/ic_action_help-web.png": "static/media/ic_action_help-web.894cd6ec.png",
+  "static/media/ic_action_my_location-web.png": "static/media/ic_action_my_location-web.521099ac.png",
+  "static/media/ic_action_search-web.png": "static/media/ic_action_search-web.967d580f.png",
+  "static/media/ic_action_settings-web.png": "static/media/ic_action_settings-web.4bc1a506.png",
+  "static/media/ic_action_share-web.png": "static/media/ic_action_share-web.b3dbb205.png",
+  "static/media/ic_history-web.png": "static/media/ic_history-web.34dafcfa.png",
+  "static/media/ic_launcher-web.png": "static/media/ic_launcher-web.e2771d0e.png",
+  "static/media/ic_network_wifi-web.png": "static/media/ic_network_wifi-web.312fd959.png",
+  "static/media/ic_new_marker_target_c-web.png": "static/media/ic_new_marker_target_c-web.5a5a27c9.png",
+  "static/media/ic_place-web.png": "static/media/ic_place-web.9fa6bf6e.png",
+  "static/media/ic_sync-web.png": "static/media/ic_sync-web.3b39686a.png",
+  "static/media/ic_whatshot-web.png": "static/media/ic_whatshot-web.b2100279.png"
+}
