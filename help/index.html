@@ -25,11 +25,11 @@
 
 		function isNoDevice() {
 			let deviceParam = getURLParameter('device');
-			return deviceParam == null || !isDeviceAndroid() && !isDeviceIOS();
+			return deviceParam == null || !isDeviceAndroid() && !isDeviceIOS() && !isDeviceWeb();
 		}
 
 		function isDeviceAll() {
-			return isDeviceAndroid() || isDeviceIOS();
+			return isDeviceAndroid() || isDeviceIOS() || isDeviceWeb();
 		}
 
 		function isDeviceAndroid() {
@@ -40,6 +40,11 @@
 		function isDeviceIOS() {
 			let deviceParam = getURLParameter('device');
 			return deviceParam === 'ios';
+		}
+
+		function isDeviceWeb() {
+			let deviceParam = getURLParameter('device');
+			return deviceParam === 'web';
 		}
 
 		function getCssStyleForVisible(_isVisibleFunc) {
@@ -55,7 +60,7 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-53240733-3"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
+		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
 		gtag('config', 'UA-53240733-3');
 	</script>
@@ -69,6 +74,7 @@
 		css += '.devices_all ' + getCssStyleForVisible(isDeviceAll);
 		css += '.devices_android ' + getCssStyleForVisible(isDeviceAndroid);
 		css += '.devices_ios ' + getCssStyleForVisible(isDeviceIOS);
+		css += '.devices_web' + getCssStyleForVisible(isDeviceWeb);
 		let head = document.head || document.getElementsByTagName('head')[0];
 		let style = document.createElement('style');
 		style.type = 'text/css';
@@ -93,11 +99,15 @@
 				<li>
 					<a href="./index.html?device=ios">iOS</a>
 				</li>
+				<li>
+					<a href="./index.html?device=web">Web App</a>
+				</li>
 			</ul>
 		</div>
 		<div class="devices_all" style="padding: 16px;">
 			<h1 class="devices_android">Map Marker help center for Android</h1>
 			<h1 class="devices_ios">Map Marker help center for iOS</h1>
+			<h1 class="devices_web">Map Marker web app help center</h1>
 			<div style="background: lightgray; padding-top: 16px; padding: 16px;">
 				<h2>Manual</h2>
 				<ul>
@@ -149,6 +159,9 @@
 				<div class="devices_ios">
 					<li>Sign into your Google account</li>
 				</div>
+				<div class="devices_web">
+					<li>Sign into your Google account</li>
+				</div>
 				<div class="devices_android">
 					<li>Select "Google Drive"</li>
 					<li>Select your account</li>
@@ -164,6 +177,9 @@
 				<li>Select the "create map file" option</li>
 				<li>Select "create cloud map"</li>
 				<div class="devices_ios">
+					<li>Sign into your Google account</li>
+				</div>
+				<div class="devices_web">
 					<li>Sign into your Google account</li>
 				</div>
 				<div class="devices_android">
@@ -191,6 +207,9 @@
 						<div class="devices_ios">
 							<li>Sign into their Google account</li>
 						</div>
+						<div class="devices_web">
+							<li>Sign into their Google account</li>
+						</div>
 						<div class="devices_android">
 							<li>Select "Google Drive"</li>
 						</div>
@@ -208,6 +227,7 @@
 				<li>select the version to restore from the list</li>
 			</ol>
 			<p class="devices_ios">This feature is not available on iOS yet.</p>
+			<p class="devices_web">This feature is not available on the web app yet.</p>
 			<a name="exportfiles"></a>
 			<h3>How to export/share your markers?</h3>
 			<ol class="devices_android">
@@ -217,6 +237,7 @@
 				<li>Select the app to export to (Gmail, Google Drive, Dropbox, etc.)</li>
 			</ol>
 			<p class="devices_ios">This feature is not available on iOS yet.</p>
+			<p class="devices_web">This feature is not available on the web app yet.</p>
 			<a name="importfiles"></a>
 			<h3>How to import your markers from a KML, KMZ or CSV file?</h3>
 			<ol class="devices_android">
@@ -228,6 +249,7 @@
 				<li>Select the file to import from the in-app file explorer</li>
 			</ol>
 			<p class="devices_ios">This feature is not available on iOS yet.</p>
+			<p class="devices_web">This feature is not available on the web app yet.</p>
 			<a name="offlinemaps"></a>
 			<h3>How to use offline maps?</h3>
 			<ol class="devices_android">
@@ -246,6 +268,7 @@
 				<li>Select "Offline (Mapsforge BETA)"</li>
 			</ol>
 			<p class="devices_ios">This feature is not available on iOS yet.</p>
+			<p class="devices_web">This feature is not available on the web app yet.</p>
 			<a name="googlemapsdataimport"></a>
 			<h3>How can I import my starred locations from Google Maps (locations marked with a star on Google Maps)?</h3>
 			<ol class="devices_android">
@@ -258,6 +281,7 @@
 				<li>select Map Marker to open it and the import will start</li>
 			</ol>
 			<p class="devices_ios">This feature is not available on iOS yet.</p>
+			<p class="devices_web">This feature is not available on the web app yet.</p>
 			<h2>FAQ</h2>
 			<a name="googlemapsdataadd"></a>
 			<h3>How do I add locations on Google Maps?</h3>
