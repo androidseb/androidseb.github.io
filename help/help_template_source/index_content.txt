@@ -11,7 +11,7 @@
 					<li>The &ldquo;my location&rdquo; button (top right)</li>
 					<li>The add button (bottom right)</li>
 				</ul>
-				<img src="images/image1.png" style="width: 200px" />
+				<img src="images/image3.png" style="width: 200px" />
 				<h2>Main menu interface</h2>
 				<p>Clicking the menu button will open the main menu. The main menu has the following elements (from top to bottom):</p>
 				<ul>
@@ -33,7 +33,7 @@
 					<li>Navigation button (bottom left)</li>
 					<li>Call button (bottom right)</li>
 				</ul>
-				<img src="images/image3.png" style="width: 200px" />
+				<img src="images/image1.png" style="width: 200px" />
 				<h1 class="devices_android">Using markers, lines and polygons</h1>
 				<h2>Creating markers</h2>
 				<p>To create a new marker, click on the add button from the main map interface, then move the map around to place the target
