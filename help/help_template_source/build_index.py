@@ -1,4 +1,5 @@
 import os
+import re
 
 DISPLAY_CLASSES_PREFIX = 'class="devices_'
 DISPLAY_CLASSES = [
@@ -99,7 +100,7 @@ def create_toc_line_source(display_class, line):
     res = link_text
     if bold_text:
         res = '<b>' + res + '</b>'
-    res = '<a href="#' + link_name + '">' + res + '</a><br>'
+    res = '<a href="#' + escape_link_name(link_name) + '">' + res + '</a><br>'
     if indented_text:
         res = '&nbsp;&nbsp;&nbsp;&nbsp;' + res
     return '\t\t\t\t' + res + '\n'
@@ -112,7 +113,11 @@ def create_toc_line_dest(display_class, line):
         return line
     link_text = line[tag_text_start_index:tag_text_end_index]
     link_name = display_class + '_' + link_text.replace(' ', '_')
-    return '\t\t\t\t<a name="' + link_name + '"></a>\n' + line
+    return '\t\t\t\t<a name="' + escape_link_name(link_name) + '"></a>\n' + line
+
+
+def escape_link_name(link_name):
+    return re.sub('[^0-9a-zA-Z_]+', '', link_name)
 
 
 if __name__ == "__main__":
