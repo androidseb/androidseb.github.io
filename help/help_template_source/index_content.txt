@@ -53,7 +53,17 @@
 					of the info window showing up. This will open the marker edit page. From there you will be able to edit all the attributes
 					of the marker. Note: if you&rsquo;re editing a line or polygon, you will have the option to edit the points of the line
 					or polygons from this page by clicking the &ldquo;edit&rdquo; button in the &ldquo;Coordinates&rdquo; section.</p>
-				<h1 class="devices_ios devices_web">Using markers</h1>
+				<h1 class="devices_ios">Using markers</h1>
+				<h2>Creating markers</h2>
+				<p>To create a new marker, click on the add button from the main map interface, then move the map around to place the target
+					where you want to place the marker. When the target is at the desired location, click &ldquo;OK&rdquo; to place the
+					marker.
+				</p>
+				<h2>Editing markers</h2>
+				<p>To edit a marker, start by selecting it (by clicking on it for example) and hit the edit button
+					of the info window showing up. This will open the marker edit page. From there you will be able to edit all the attributes
+					of the marker.</p>
+				<h1 class="devices_web">Using markers</h1>
 				<h2>Creating markers</h2>
 				<p>To create a new marker, click on the add button from the main map interface, then move the map around to place the target
 					where you want to place the marker. When the target is at the desired location, click &ldquo;OK&rdquo; to place the

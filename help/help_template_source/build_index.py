@@ -112,7 +112,7 @@ def create_toc_line_dest(display_class, line):
         return line
     link_text = line[tag_text_start_index:tag_text_end_index]
     link_name = display_class + '_' + link_text.replace(' ', '_')
-    return '<a name="' + link_name + '"></a>' + line
+    return '\t\t\t\t<a name="' + link_name + '"></a>\n' + line
 
 
 if __name__ == "__main__":
