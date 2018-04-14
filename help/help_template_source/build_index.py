@@ -6,21 +6,15 @@ DISPLAY_CLASSES = [
     'devices_ios',
     'devices_web',
 ]
-HTML_TOC_TAGS = ['h1', 'h2']
-HTML_TAGS_HIERARCHY_ROOT = {
-    'root': {
-        'h1': {
-            'h2': {
-                'p': None,
-                'ul': {'li': None},
-                'ol': {'li': None},
-            },
-            'p': None,
-            'ul': {'li': None},
-            'ol': {'li': None},
-        }
-    }
+HTML_TAGS_HIERARCHY_LEVELS = {
+    'h1': 1,
+    'h2': 2,
+    'p': 5,
+    'ul': 3,
+    'ol': 3,
+    'li': 4,
 }
+TOC_MAX_HIERARCHY_LEVEL = 2
 
 
 def copy_file_lines_to(source_file_path, dest_file):
@@ -42,7 +36,7 @@ def generate_filecontent(source_file_path, dest_file):
         dest_file.write('\t\t\t<div class="' + display_class + '">\n')
         toc_lines = []
         content_lines = []
-        write_tag_lines(toc_lines, content_lines, display_class, current_html_lines, HTML_TAGS_HIERARCHY_ROOT, 'root')
+        write_tag_lines(toc_lines, content_lines, display_class, current_html_lines)
         for line in toc_lines:
             dest_file.write(line)
         for line in content_lines:
@@ -50,56 +44,44 @@ def generate_filecontent(source_file_path, dest_file):
         dest_file.write('\t\t\t</div>\n')
 
 
-def write_tag_lines(toc_lines, content_lines, display_class, current_html_lines, current_html_hierarchy, current_html_key):
-    if len(current_html_lines) == 0:
-        return
-
-    if current_html_key == None or current_html_hierarchy[current_html_key] == None:
-        for line in current_html_lines:
-            if is_toc_line(line):
-                toc_lines.append(create_toc_line_source(display_class, line))
-                content_lines.append(create_toc_line_dest(display_class, line))
+def write_tag_lines(toc_lines, content_lines, display_class, html_lines):
+    current_hierarchy_level_lock = None
+    for line in html_lines:
+        if current_hierarchy_level_lock != None:
+            line_hierarchy_level = get_line_hierarchy_level(line)
+            if line_hierarchy_level != None and line_hierarchy_level <= current_hierarchy_level_lock:
+                current_hierarchy_level_lock = None
             else:
-                content_lines.append(line)
-        return
-
-    current_html_hierarchy = current_html_hierarchy[current_html_key]
-
-    current_tag_children_names = []
-    for child_name in current_html_hierarchy:
-        current_tag_children_names.append(child_name)
-
-    current_child_name = get_matching_child_name_for_line(current_tag_children_names, current_html_lines[0])
-    current_child_lines = []
-    currently_blocked_child_name = None
-
-    for line in current_html_lines:
-        matching_child_name = get_matching_child_name_for_line(current_tag_children_names, line)
-        if currently_blocked_child_name != None:
-            if matching_child_name != currently_blocked_child_name:
                 continue
-            else:
-                currently_blocked_child_name = None
-        if DISPLAY_CLASSES_PREFIX in line:
-            if not display_class in line:
-                currently_blocked_child_name = matching_child_name
-                continue
-        if matching_child_name != current_child_name and matching_child_name in current_tag_children_names:
-            html_key = current_child_name
-            if html_key == None:
-                html_key = matching_child_name
-            write_tag_lines(toc_lines, content_lines, display_class, current_child_lines, current_html_hierarchy, html_key)
-            current_child_lines = []
-            current_child_name = matching_child_name
-        current_child_lines.append(line)
-    write_tag_lines(toc_lines, content_lines, display_class, current_child_lines, current_html_hierarchy, current_child_name)
+
+        if is_line_blocking(display_class, line):
+            current_hierarchy_level_lock = get_line_hierarchy_level(line)
+            continue
+
+        if is_toc_line(line):
+            toc_lines.append(create_toc_line_source(display_class, line))
+            content_lines.append(create_toc_line_dest(display_class, line))
+        else:
+            content_lines.append(line)
+
+
+def get_line_hierarchy_level(line):
+    for html_tag in HTML_TAGS_HIERARCHY_LEVELS:
+        if '<' + html_tag in line:
+            return HTML_TAGS_HIERARCHY_LEVELS[html_tag]
+    return None
+
+
+def is_line_blocking(display_class, line):
+    if DISPLAY_CLASSES_PREFIX in line:
+        if not display_class in line:
+            return True
+    return False
 
 
 def is_toc_line(line):
-    for tog_tag in HTML_TOC_TAGS:
-        if '<' + tog_tag in line:
-            return True
-    return False
+    line_hierarchy_level = get_line_hierarchy_level(line)
+    return line_hierarchy_level != None and line_hierarchy_level <= TOC_MAX_HIERARCHY_LEVEL
 
 
 def create_toc_line_source(display_class, line):
@@ -119,8 +101,8 @@ def create_toc_line_source(display_class, line):
         res = '<b>' + res + '</b>'
     res = '<a href="#' + link_name + '">' + res + '</a><br>'
     if indented_text:
-        res = '&nbsp&nbsp&nbsp' + res
-    return res
+        res = '&nbsp;&nbsp;&nbsp;&nbsp;' + res
+    return '\t\t\t\t' + res + '\n'
 
 
 def create_toc_line_dest(display_class, line):
@@ -131,15 +113,6 @@ def create_toc_line_dest(display_class, line):
     link_text = line[tag_text_start_index:tag_text_end_index]
     link_name = display_class + '_' + link_text.replace(' ', '_')
     return '<a name="' + link_name + '"></a>' + line
-
-
-def get_matching_child_name_for_line(child_names_list, line):
-    matching_child_name = None
-    for child_name in child_names_list:
-        if '<' + child_name in line:
-            matching_child_name = child_name
-            break
-    return matching_child_name
 
 
 if __name__ == "__main__":
