@@ -158,14 +158,15 @@
 					<li>Open the cloud folder details</li>
 					<li>Select "add people" and add give "write permissions" to your friends</li>
 					<li>Have your friends install Map Marker</li>
+					<li>Your friends will then need to open the existing map file from the cloud</li>
 				</ol>
-				<p>Your friends will then need to:</p>
+				<h2>How to open an existing map file from the cloud?</h2>
 				<ol>
 					<li>Open the left drawer</li>
 					<li>Select the "open map file" option</li>
 					<li>Select the "open cloud map" option</li>
-					<li>Select "Google Drive"</li>
-					<li>Select the map you shared from the list</li>
+					<li class="devices_android">Select "Google Drive"</li>
+					<li>Select the cloud map you want to open</li>
 				</ol>
 				<h2 class="devices_android">How to restore a previous version from history?</h2>
 				<ol>
