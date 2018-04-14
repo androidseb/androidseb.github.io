@@ -53,6 +53,16 @@
 					of the info window showing up. This will open the marker edit page. From there you will be able to edit all the attributes
 					of the marker. Note: if you&rsquo;re editing a line or polygon, you will have the option to edit the points of the line
 					or polygons from this page by clicking the &ldquo;edit&rdquo; button in the &ldquo;Coordinates&rdquo; section.</p>
+				<h1 class="devices_ios devices_web">Using markers</h1>
+				<h2>Creating markers</h2>
+				<p>To create a new marker, click on the add button from the main map interface, then move the map around to place the target
+					where you want to place the marker. When the target is at the desired location, click &ldquo;OK&rdquo; to place the
+					marker.
+				</p>
+				<h2>Editing markers</h2>
+				<p>To edit a marker, start by selecting it (by clicking on it for example) and hit the edit button
+					of the info window showing up. This will open the marker edit page. From there you will be able to edit all the attributes
+					of the marker.</p>
 				<h1>Using map folders</h1>
 				<p>You can use map folders to organize your markers into different sections. Things you can do with folders:</p>
 				<ul>
@@ -78,7 +88,7 @@
 					<li>&lrm;modify the folder to your liking</li>
 					<li>&lrm;click ok to save the changes</li>
 				</ol>
-				<h2>Marker templates: custom fields</h2>
+				<h2 class="devices_android">Marker templates: custom fields</h2>
 				<p>While creating or editing a folder, you can define custom fields into the folder. Those folder custom fields will act
 					as a template: when creating a new marker with only one folder selected, if that folder has custom fields then the folder's
 					custom fields will automatically be added to the newly created marker.</p>
@@ -93,10 +103,10 @@
 					<li>click on the custom field from the custom fields list</li>
 					<li>&lrm;edit the custom field to your liking and save it</li>
 				</ol>
-				<h2>Mass assign color and custom fields</h2>
+				<h2 class="devices_android">Mass assign color and custom fields</h2>
 				<p>When changing a folder&rsquo;s color or custom fields, a prompt will offer you to mass-assign the color or custom fields
 					to the markers inside that folder.</p>
-				<h2>Presets, templates and bulk icons with folders</h2>
+				<h2 class="devices_android">Presets, templates and bulk icons with folders</h2>
 				<p>If you want markers to be automatically created with a specific combination of icon, color and custom fields you can
 					achieve this through folders. Folders will act as templates for their children markers. To do this:</p>
 				<ol>
@@ -113,9 +123,9 @@
 					<li>Open the left drawer</li>
 					<li>Click on the map file to open the file options menu</li>
 					<li>Select the "cloud sync" option</li>
-					<li>Select "Google Drive"</li>
+					<li class="devices_android">Select "Google Drive"</li>
 					<li>Select your account</li>
-					<li>Select the folder where you want the cloud folder to be saved</li>
+					<li class="devices_android">Select the folder where you want the cloud folder to be saved</li>
 					<li>Click ok</li>
 				</ol>
 				<h2>How to create a new map folder on the cloud</h2>
@@ -124,9 +134,9 @@
 					<li>Click on the map file to open the file options menu</li>
 					<li>Select the "create map file" option</li>
 					<li>Select "create cloud map"</li>
-					<li>Select "Google Drive"</li>
+					<li class="devices_android">Select "Google Drive"</li>
 					<li>Select your account</li>
-					<li>select the folder where you want the cloud folder to be saved</li>
+					<li class="devices_android">select the folder where you want the cloud folder to be saved</li>
 					<li>Click ok</li>
 				</ol>
 				<h2>How to share your map cloud folder with other people on the cloud</h2>
@@ -147,7 +157,7 @@
 					<li>Select "Google Drive"</li>
 					<li>Select the map you shared from the list</li>
 				</ol>
-				<h2>How to restore a previous version from history?</h2>
+				<h2 class="devices_android">How to restore a previous version from history?</h2>
 				<ol>
 					<li>open the left drawer</li>
 					<li>click on the map file to open the file options menu</li>
@@ -155,7 +165,7 @@
 					<li>select the "view history/restore" option</li>
 					<li>select the version to restore from the list</li>
 				</ol>
-				<h1>Importing and exporting markers</h1>
+				<h1 class="devices_android">Importing and exporting markers</h1>
 				<h2>How to export/share your markers?</h2>
 				<ol>
 					<li>Click the "share" button of the main action bar (last button)</li>
@@ -172,7 +182,7 @@
 					<li>Select "Import"</li>
 					<li>Select the file to import from the in-app file explorer</li>
 				</ol>
-				<h1>Advanced features</h1>
+				<h1 class="devices_android">Advanced features</h1>
 				<h2>How to use offline maps?</h2>
 				<ol>
 					<li>Download map files manually from here:
@@ -237,7 +247,7 @@
 					<li>click the location that needs fixing</li>
 					<li>click "suggest an edit"</li>
 				</ul>
-				<h1>Troubleshooting and known problems</h1>
+				<h1 class="devices_android">Troubleshooting and known problems</h1>
 				<h2>Problems with Google Earth</h2>
 				<p>I am not aware of any KMZ format where Google Earth supports images for markers. That is why Map Marker exports the images
 					into the KMZ file its own way, so only Map Marker can read back the images. If you have a KMZ sample file with images
