@@ -100,9 +100,11 @@ def create_toc_line_source(display_class, line):
     res = link_text
     if bold_text:
         res = '<b>' + res + '</b>'
-    res = '<a href="#' + escape_link_name(link_name) + '">' + res + '</a><br>'
     if indented_text:
-        res = '&nbsp;&nbsp;&nbsp;&nbsp;' + res
+        atag = '<a style="display:inline-block; margin-left: 16px;" '
+    else:
+        atag = '<a style="display:inline-block;" '
+    res = atag + 'href="#' + escape_link_name(link_name) + '">' + res + '</a><br>'
     return '\t\t\t\t' + res + '\n'
 
 
