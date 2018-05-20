@@ -26,6 +26,15 @@ def copy_file_lines_to(source_file_path, dest_file):
             dest_file.write(line)
 
 
+def filter_line_device_class(line):
+    strings_to_eliminate = []
+    for dc in DISPLAY_CLASSES:
+        strings_to_eliminate.append(' class="' + dc + '"')
+    for str_to_eliminate in strings_to_eliminate:
+        line = line.replace(str_to_eliminate, '')
+    return line
+
+
 def generate_filecontent(source_file_path, dest_file):
     if not os.path.exists(source_file_path):
         return
@@ -39,9 +48,9 @@ def generate_filecontent(source_file_path, dest_file):
         content_lines = []
         write_tag_lines(toc_lines, content_lines, display_class, current_html_lines)
         for line in toc_lines:
-            dest_file.write(line)
+            dest_file.write(filter_line_device_class(line))
         for line in content_lines:
-            dest_file.write(line)
+            dest_file.write(filter_line_device_class(line))
         dest_file.write('\t\t\t</div>\n')
 
 

@@ -1,17 +1,20 @@
-				<h1 class="devices_android">User interface description</h1>
+				<h1>User interface description</h1>
 				<h2>Main map interface</h2>
 				<p>In the screenshot below, from left to right and from top to bottom, we have:</p>
 				<ul>
 					<li>The action bar (top left)</li>
 					<li>menu button</li>
 					<li>&lrm;jump button</li>
-					<li>&lrm;organize button</li>
+					<li class="devices_android">&lrm;organize button</li>
 					<li>&lrm;search button</li>
 					<li>share button</li>
-					<li>The &ldquo;my location&rdquo; button (top right)</li>
+					<li class="devices_android">The &ldquo;my location&rdquo; button (top right)</li>
+					<li class="devices_ios">The &ldquo;my location&rdquo; button (top right)</li>
 					<li>The add button (bottom right)</li>
 				</ul>
-				<img src="images/image3.png" style="width: 200px" />
+				<img class="devices_android" src="images/android_screenshot_1.png" style="width: 200px" />
+				<img class="devices_ios" src="images/ios_screenshot_1.png" style="width: 200px" />
+				<img class="devices_web" src="images/web_screenshot_1.png" style="width: 600px" />
 				<h2>Main menu interface</h2>
 				<p>Clicking the menu button will open the main menu. The main menu has the following elements (from top to bottom):</p>
 				<ul>
@@ -23,7 +26,9 @@
 					<li>About button</li>
 					<li>Premium-related elements</li>
 				</ul>
-				<img src="images/image2.png" style="width: 200px" />
+				<img class="devices_android" src="images/android_screenshot_2.png" style="width: 200px" />
+				<img class="devices_ios" src="images/ios_screenshot_2.png" style="width: 200px" />
+				<img class="devices_web" src="images/web_screenshot_2.png" style="width: 600px" />
 				<h2>Marker info window</h2>
 				<p>When you select a marker (when clicking on it for example), you will see the marker info window. The info window has
 					4 buttons:</p>
@@ -33,7 +38,9 @@
 					<li>Navigation button (bottom left)</li>
 					<li>Call button (bottom right)</li>
 				</ul>
-				<img src="images/image1.png" style="width: 200px" />
+				<img class="devices_android" src="images/android_screenshot_3.png" style="width: 200px" />
+				<img class="devices_ios" src="images/ios_screenshot_3.png" style="width: 200px" />
+				<img class="devices_web" src="images/web_screenshot_3.png" style="width: 600px" />
 				<h1 class="devices_android">Using markers, lines and polygons</h1>
 				<h2>Creating markers</h2>
 				<p>To create a new marker, click on the add button from the main map interface, then move the map around to place the target
