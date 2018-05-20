@@ -185,21 +185,13 @@
 				</ol>
 				<h1>Importing and exporting markers</h1>
 				<h2>How to export/share your markers?</h2>
-				<ol class="devices_android">
+				<ol>
 					<li>Click the "share" button of the main action bar (last button)</li>
 					<li>Select "All markers and folders"</li>
-					<li>Select the format of export</li>
-					<li>Select the app to export to (Gmail, Google Drive, Dropbox, etc.)</li>
-				</ol>
-				<ol class="devices_ios">
-					<li>Click the "share" button of the main action bar (last button)</li>
-					<li>Select "All markers and folders"</li>
-					<li>Select the app to export to (Gmail, Google Drive, Dropbox, etc.)</li>
-				</ol>
-				<ol class="devices_web">
-					<li>Click the "share" button of the main action bar (last button)</li>
-					<li>Select "All markers and folders"</li>
-					<li>The exported file should download from your browser</li>
+					<li class="devices_android">Select the format of export</li>
+					<li class="devices_android">Select the app to export to (Gmail, Google Drive, Dropbox, etc.)</li>
+					<li class="devices_ios">Select the app to export to (Gmail, Google Drive, Dropbox, etc.)</li>
+					<li class="devices_web">The exported file should download from your browser</li>
 				</ol>
 				<h2 class="devices_android">How to import your markers from a KML, KMZ or CSV file?</h2>
 				<ol>

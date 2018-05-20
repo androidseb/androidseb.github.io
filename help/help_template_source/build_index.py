@@ -77,7 +77,7 @@ def write_tag_lines(toc_lines, content_lines, display_class, html_lines):
 
 def get_line_hierarchy_level(line):
     for html_tag in HTML_TAGS_HIERARCHY_LEVELS:
-        if '<' + html_tag in line:
+        if ('<' + html_tag in line) or ('</' + html_tag + '>' in line):
             return HTML_TAGS_HIERARCHY_LEVELS[html_tag]
     return None
 
