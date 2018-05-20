@@ -176,22 +176,48 @@
 					<li>select the "view history/restore" option</li>
 					<li>select the version to restore from the list</li>
 				</ol>
-				<h1 class="devices_android">Importing and exporting markers</h1>
+				<h1>Importing and exporting markers</h1>
 				<h2>How to export/share your markers?</h2>
-				<ol>
+				<ol class="devices_android">
 					<li>Click the "share" button of the main action bar (last button)</li>
 					<li>Select "All markers and folders"</li>
 					<li>Select the format of export</li>
 					<li>Select the app to export to (Gmail, Google Drive, Dropbox, etc.)</li>
 				</ol>
-				<h2>How to import your markers from a KML, KMZ or CSV file?</h2>
+				<ol class="devices_ios">
+					<li>Click the "share" button of the main action bar (last button)</li>
+					<li>Select "All markers and folders"</li>
+					<li>Select the app to export to (Gmail, Google Drive, Dropbox, etc.)</li>
+				</ol>
+				<ol class="devices_web">
+					<li>Click the "share" button of the main action bar (last button)</li>
+					<li>Select "All markers and folders"</li>
+					<li>The exported file should download from your browser</li>
+				</ol>
+				<h2 class="devices_android">How to import your markers from a KML, KMZ or CSV file?</h2>
 				<ol>
-					<li>Download the file to your phone</li>
+					<li>Download the file to your device</li>
 					<li>Open the side drawer by clicking the left button of the main action bar</li>
 					<li>Open the settings by clicking "settings"</li>
 					<li>Scroll down and click "Import/Export"</li>
 					<li>Select "Import"</li>
 					<li>Select the file to import from the in-app file explorer</li>
+				</ol>
+				<h2 class="devices_ios">How to import your markers from a KMZ file?</h2>
+				<ol>
+					<li>Open the KMZ file details</li>
+					<li>Find the "open with" option</li>
+					<li>You should see a list of apps to open the file with</li>
+					<li>In the list of apps, select Map Marker</li>
+					<li>Map Marker will start and you will show a confirmation prompt</li>
+					<li>Click yes to import the file</li>
+				</ol>
+				<h2 class="devices_web">How to import your markers from a KMZ file?</h2>
+				<ol>
+					<li>Open the left drawer</li>
+					<li>Click on the map file to open the file options menu</li>
+					<li>Select the "import markers" option</li>
+					<li>Select the KMZ file from your computer and the import will start</li>
 				</ol>
 				<h1 class="devices_android">Advanced features</h1>
 				<h2>How to use offline maps?</h2>
