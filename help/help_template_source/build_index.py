@@ -134,5 +134,5 @@ def escape_link_name(link_name):
 if __name__ == "__main__":
     with open('../index.html', 'w') as f:
         copy_file_lines_to('./index_header.txt', f)
-        generate_filecontent('./index_content.txt', f)
+        generate_filecontent('./index_content.html', f)
         copy_file_lines_to('./index_footer.txt', f)
