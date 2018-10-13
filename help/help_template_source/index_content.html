@@ -285,9 +285,9 @@
 				<p class="devices_web">&rArr; Since the web app is on your browser only, there is no other way to retrieve the data to my knowledge :'(</p>
 
 
-				<h1 class="devices_android">Advanced features</h1>
+				<h1>Advanced features</h1>
 
-				<h2>How to use offline maps?</h2>
+				<h2 class="devices_android">How to use offline maps?</h2>
 				<ol>
 					<li>Download map files manually from here:
 						<a href="http://ftp-stud.hs-esslingen.de/pub/Mirrors/download.mapsforge.org/maps/" target="_blank" rel="noopener">http://ftp-stud.hs-esslingen.de/pub/Mirrors/download.mapsforge.org/maps/</a>
@@ -306,13 +306,20 @@
 
 				<h2>How can I import my starred locations from Google Maps (locations marked with a star on Google Maps)?</h2>
 				<ol>
-					<li>go to
-						<a href="https://www.google.com/bookmarks/" target="_blank" rel="noopener">https://www.google.com/bookmarks/</a>
+					<li>Open the Google Takout page here:
+						<a href="https://takeout.google.com/settings/takeout" target="_blank" rel="noopener">https://takeout.google.com/settings/takeout</a>
 					</li>
-					<li>select "export bookmarks", you will obtain a file named "GoogleBookmarks.html"</li>
-					<li>copy this file on your phone or send it to yourself by email and try to open it (either from a file</li>
-					<li>explorer or by clicking the attachment from your email app)</li>
-					<li>select Map Marker to open it and the import will start</li>
+					<li>Click "Select None" to uncheck everything</li>
+					<li>Scroll down and toggle "Maps (your places)"</li>
+					<li>Scroll to the bottom</li>
+					<li>Click "Next"</li>
+					<li>Select a convenient way for you get the files and click "Create archive"</li>
+					<li>Click "Download" to download the created archive</li>
+					<li>Unzip the archive file and retrieve the file named "Saved Places.json"</li>
+					<li>Convert the file to KMZ with this page:
+						<a href="https://mygeodata.cloud/converter/" target="_blank" rel="noopener">https://mygeodata.cloud/converter/</a>
+					</li>
+					<li>Import the resulting KMZ file into Map Marker</li>	
 				</ol>
 
 
