@@ -135,6 +135,7 @@
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_How_to_import_your_markers_from_a_KML_KMZ_or_CSV_file">How to import your markers from a KML, KMZ or CSV file?</a><br>
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Migrating_your_data_to_a_new_device">Migrating your data to a new device</a><br>
 				<a style="display:inline-block;" href="#devices_android_Advanced_features"><b>Advanced features</b></a><br>
+				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Setting_up_personal_Google_Places_API_access">Setting up personal Google Places API access</a><br>
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_How_to_use_offline_maps">How to use offline maps?</a><br>
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_How_can_I_import_my_starred_locations_from_Google_Maps_locations_marked_with_a_star_on_Google_Maps">How can I import my starred locations from Google Maps (locations marked with a star on Google Maps)?</a><br>
 				<a style="display:inline-block;" href="#devices_android_FAQ"><b>FAQ</b></a><br>
@@ -421,6 +422,44 @@
 				<p>&rArr; If your previous device had Android 6 or up installed, it might have backed up some app data automatically through Google Drive, depending on your settings at the time. Upon installing the app on your new device, the data might be restored automatically. If that's not the case, there is no other way to retrieve the data to my knowledge :'(</p>
 				<a name="devices_android_Advanced_features"></a>
 				<h1>Advanced features</h1>
+
+				<a name="devices_android_Setting_up_personal_Google_Places_API_access"></a>
+				<h2>Setting up personal Google Places API access</h2>
+				<p>These instructions are for the BETA Android app only.
+					You can setup Google Places API access on your own Google account to avoid being quota-limited.
+					This section explains how you can obtain your own API key to use your own private access to Google Places search.<br>
+					<b>IMPORTANT NOTE:</b> Please note that the process involves giving your credit card information to Google so it
+					means that they can bill you on the API usage. They have a very generous free usage quota per month so typically, one person using
+					it alone would never go over the quota. That being said, make sure you understand what you're doing and don't share
+					your API key with anybody else. Also, make sure you follow the last steps of this section for limiting the usage quota.
+					More information on the billing model can be found here:
+					<a href="https://developers.google.com/places/web-service/usage-and-billing" target="_blank" rel="noopener">Google Places API billing information</a>
+				</p>
+				<ol>
+					<li>Login to your Google account in your browser</li>
+					<li>Open the Google Places Help page here:
+							<a href="https://developers.google.com/places/web-service/get-api-key" target="_blank" rel="noopener">Google help page for API keys</a>
+					</li>
+					<li>Under "If you are using the standard Places API", click the "GET A KEY" button</li>
+					<li>Click next until you see your API key</li>
+					<li>Copy your API key and add it in the Map Marker app settings</li>
+					<li>At this point, your API key will be allowed to make one request per day, so you'll need to setup your Google Cloud account with billing to make that limit higher</li>
+					<li>Open the Google Cloud Console billing page here:
+							<a href="https://console.cloud.google.com/billing" target="_blank" rel="noopener">Google Cloud Console Billing</a>
+					</li>
+					<li>Click the "Add billing account" button</li>
+					<li>Go through the billing registration to obtain a valid billing account</li>
+					<li>Open the Google Cloud Console billing projects page here:
+						<a href="https://console.cloud.google.com/billing/projects" target="_blank" rel="noopener">Google Cloud Console Billing Projects</a>
+					</li>
+					<li>Go to the "My projects" tab</li>
+					<li>Click the 3 dots icon on the right of your project and select "Change billing account"</li>
+					<li>Click the "SET ACCOUNT" button => search should start working in the app!</li>
+					<li>!!!WARNING!!! It is highly recommended that you set a limit on the number of requests per day, for that, open the
+							<a href="https://console.developers.google.com/google/maps-apis/apis/places-backend.googleapis.com/quotas" target="_blank" rel="noopener">Google Cloud Console Places API Quotas Page</a>
+					</li>
+					<li>Scroll at the bottom, and under "Requests per day", change the maximum to something reasonnable like 500 instead of unlimited. If the limit is too low, you can always go back and change it later.</li>
+				</ol>
 
 				<a name="devices_android_How_to_use_offline_maps"></a>
 				<h2>How to use offline maps?</h2>
