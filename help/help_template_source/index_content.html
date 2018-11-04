@@ -289,40 +289,96 @@
 
 				<h2 class="devices_android">Setting up personal Google Places API access</h2>
 				<p>These instructions are for the BETA Android app only.
-					You can setup Google Places API access on your own Google account to avoid being quota-limited.
-					This section explains how you can obtain your own API key to use your own private access to Google Places search.<br>
-					<b>IMPORTANT NOTE:</b> Please note that the process involves giving your credit card information to Google so it
-					means that they can bill you on the API usage. They have a very generous free usage quota per month so typically, one person using
-					it alone would never go over the quota. That being said, make sure you understand what you're doing and don't share
-					your API key with anybody else. Also, make sure you follow the last steps of this section for limiting the usage quota.
+					Map Marker is allowed a generous free quota by Google for places search requests, however that quota
+					is shared among an increasing number of users, so it happens that the daily search quota is reached,
+					making any search impossible until the next day.<br>
+					To avoid this inconvenience, you can setup Google Places API access on your own Google account:
+					this section explains how you can obtain your own API key to use your own private access to Google
+					Places search. If followed and used normally, this should allow you to have your own access to
+					search without having to pay anything (except your time to set it up of course).<br>
+					<b>IMPORTANT NOTE:</b> Please note that the process involves giving your credit card information to
+					Google so it means that they can bill you on the API usage. Although it's pretty unlikely, if you
+					don't limit the API usage as described in the instructions and there is a catastrophic use of your
+					account on the APIs, Google could charge you thousands of dollars on your credit card, so it is
+					extremely important to setup the limit <b>before</b> using the API. Do not skip any step in the
+					instructions, and if you're stuck at one step, halt there until you figure it out, don't keep
+					going. These instructions are written in a way such as if you stop at any step, your account will
+					not be exposed to crazy billing, so it is important to follow the steps in the right order.
+					These instructions are aimed at non-developers who are not familiar with the Google Cloud
+					Console and therefore have a blank Google Cloud Console account.
 					More information on the billing model can be found here:
 					<a href="https://developers.google.com/places/web-service/usage-and-billing" target="_blank" rel="noopener">Google Places API billing information</a>
 				</p>
 				<ol>
 					<li>Login to your Google account in your browser</li>
-					<li>Open the Google Places Help page here:
-							<a href="https://developers.google.com/places/web-service/get-api-key" target="_blank" rel="noopener">Google help page for API keys</a>
+					<li>Open the Google Cloud Console page here:
+						<a href="https://console.cloud.google.com" target="_blank" rel="noopener">Google Cloud Console</a>
 					</li>
-					<li>Under "If you are using the standard Places API", click the "GET A KEY" button</li>
-					<li>Click next until you see your API key</li>
-					<li>Copy your API key and add it in the Map Marker app settings</li>
-					<li>At this point, your API key will be allowed to make one request per day, so you'll need to setup your Google Cloud account with billing to make that limit higher</li>
-					<li>Open the Google Cloud Console billing page here:
-							<a href="https://console.cloud.google.com/billing" target="_blank" rel="noopener">Google Cloud Console Billing</a>
+					<li>
+						You will need to create a project: click at the top left on "Select a project"<br>
+						<img src="images/places_select_project.png" />
+					</li>
+					<li>
+						In the dialog, click "NEW PROJECT"<br>
+						<img src="images/places_create_project.png" />
+					</li>
+					<li>
+						In the next page, click the blue "CREATE" button at the bottom<br>
+						<img src="images/places_create_project2.png" />
+					</li>
+					<li>
+						Once your project is created, you will need to select it: click at the top left on
+						"Select a project" again<br>
+						<img src="images/places_select_project.png" />
+					</li>
+					<li>Click on your project to select it</li>
+					<li>
+						Open the Google Cloud Console billing page here:
+						<a href="https://console.cloud.google.com/billing" target="_blank" rel="noopener">Google Cloud Console Billing</a>
 					</li>
 					<li>Click the "Add billing account" button</li>
-					<li>Go through the billing registration to obtain a valid billing account</li>
+					<li>Go through the billing registration to obtain a valid billing account. This will involve giving your credit card information to Google.</li>
 					<li>Open the Google Cloud Console billing projects page here:
 						<a href="https://console.cloud.google.com/billing/projects" target="_blank" rel="noopener">Google Cloud Console Billing Projects</a>
 					</li>
 					<li>Go to the "My projects" tab</li>
 					<li>Click the 3 dots icon on the right of your project and select "Change billing account"</li>
-					<li>Click the "SET ACCOUNT" button => search should start working in the app!</li>
-					<li>!!!WARNING!!! It is highly recommended that you set a limit on the number of requests per day, for that, open the
-							<a href="https://console.developers.google.com/google/maps-apis/apis/places-backend.googleapis.com/quotas" target="_blank" rel="noopener">Google Cloud Console Places API Quotas Page</a>
+					<li>Click the "SET ACCOUNT" button. At this point, billing is enabled for your project so you can edit the limits for the APIs you're using.</li>
+					<li>Open the Google Cloud Console Places API Page
+							<a href="https://console.developers.google.com/google/maps-apis/apis/places-backend.googleapis.com" target="_blank" rel="noopener">Google Cloud Console Places API Page</a>
 					</li>
-					<li>Scroll at the bottom, and under "Requests per day", change the maximum to something reasonnable like 500 instead of unlimited. If the limit is too low, you can always go back and change it later.</li>
+					<li>Click "ENABLE" to enable the Google Places API</li>
+					<li>Open the Google Cloud Console Places API Quotas Page
+						<a href="https://console.developers.google.com/google/maps-apis/apis/places-backend.googleapis.com/quotas" target="_blank" rel="noopener">Google Cloud Console Places API Quotas Page</a>
+					</li>
+					<li>
+						Scroll at the bottom, and under "Requests per day", change the maximum to <b>50</b>. That's a
+						pretty safe value to avoid getting charged, since Google gives you 200$ of credit evey month
+						and the most expensive requests are at 32$ per 1000. Assuming you do 50 most expensive requests
+						every day of the month, that would mean 31*50 = 1550 requests per month which is 1550/1000*32 =
+						49.6$, which is safely covered by the 200$ of credit. However if you set the limit higher,
+						let's say 500, it could go all the way to 496$ which means Google would bill you 296$ at the
+						end of the month. That being said, Map Marker uses the cheaper requests around 17$ per 1000,
+						but this limit is just to be safe.<br>
+						<img src="images/places_set_quota_50.png" />
+					</li>
+					<li>
+						At this point, <b>if you've followed all the previous steps</b>, you can safely create an API
+						key for your project. For that, open the Google Cloud Credentials page:
+						<a href="https://console.cloud.google.com/apis/credentials" target="_blank" rel="noopener">Google Cloud Console Billing</a><br>
+					</li>
+					<li>
+						Click on the blue "Create Credentials" button and select "API key"<br>
+						<img src="images/places_create_credentials.png" />
+					</li>
+					<li>
+						Finally copy your API key with the copy button and send it to your phone (by email for example).<br>
+						<img src="images/places_copy_api_key.png" />
+					</li>
 				</ol>
+				Note: At any time, you can check your usage on the billing page:
+				<a href="https://console.cloud.google.com/billing" target="_blank" rel="noopener">Google Cloud Console Billing</a><br>
+				You will need to select your billing account and go to the "Transactions" tab. You want to look at your "Ending balance", which should always be 0.
 
 				<h2 class="devices_android">How to use offline maps?</h2>
 				<ol>
