@@ -1,0 +1,162 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>Map Marker help center</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="http://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet"
+	 type="text/css" />
+	<meta name="description" content="The Map Marker help center" />
+	<meta name="keywords" content="Map Marker, places, organizer ,help center" />
+</head>
+
+<body>
+	<div id="google_translate_element"></div>
+	<script type="text/javascript">
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL }, 'google_translate_element');
+		}
+	</script>
+	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<div style="min-width: 300px; max-width: 1280px; padding-bottom: 200px; display: block;">
+		<a href="../index.html">Home</a><br>
+		<a href="./index.html">Help Center</a>
+		<h1>Google Places API key access tutorial</h1>
+		<strong>
+			!!! WARNING !!!<br>
+			Please note that the process involves giving your <b>credit card information</b> to Google so it means that
+			they can <b>charge your credit card</b> if your usage of their APIs is too important.<br>
+			Accidental/excessive usage could cost you <b>thousands of dollars</b> so it is extremely important to setup
+			limits <b>before</b> using the API.<br>
+			Do not skip <b>any</b> step in the instructions of this tutorial.<br>
+			If you're stuck at one step, <b>do not continue!</b><br>
+			This tutorial is written with ordered numbered steps to ensure the limits are properly set before the API
+			is usable at all.<br>
+			One of the steps is to verify you know how to view the billing of your account. After you have setup the
+			API you'll have to watch the billing to make sure you don't have any expenses. You've been warned!
+		</strong>
+		<p>
+			From a user's perspective, I understand that it's not a good experience to have to spend time to get a
+			basic feature to work, but I'm just one guy, I'm not a big corporation with big money, I have absolutely no
+			other choice than to impose this onto my users since I want to keep the feature free... if there was a
+			better way to solve this, I would use it, but after the discussions I had with Google's developer support,
+			it ended up being the only way for me to keep the feature functional without paying thousands of dollars
+			from my own pocket. I'm very sorry about that but it's the best solution I could come up with! If you have
+			any suggestions to do this better, feel free to let me know, I'd love to know about it.<br>
+			These instructions are aimed at non-developers who are not familiar with the Google Cloud Console and
+			therefore have a blank Google Cloud Console account. More information on the billing model can be found
+			here:
+			<a href="https://developers.google.com/places/web-service/usage-and-billing" target="_blank" rel="noopener">Google
+				Places API billing information</a>
+		</p>
+
+		<ol>
+			<br><li>Login to your Google account in your browser</li>
+			<br><li>Open the Google Cloud Console page here:
+				<a href="https://console.cloud.google.com" target="_blank" rel="noopener">Google Cloud Console</a>
+			</li>
+			<br><li>
+				You will need to create a project: click at the top left on "Select a project"<br>
+				<img src="images/places_select_project.png" />
+			</li>
+			<br><li>
+				In the dialog, click "NEW PROJECT"<br>
+				<img src="images/places_create_project.png" />
+			</li>
+			<br><li>
+				In the next page, click the blue "CREATE" button at the bottom<br>
+				<img src="images/places_create_project2.png" />
+			</li>
+			<br><li>
+				Once your project is created, you will need to select it: click at the top left on
+				"Select a project" again<br>
+				<img src="images/places_select_project.png" />
+			</li>
+			<br><li>Click on your project to select it</li>
+			<br><li>
+				Open the Google Cloud Console billing page here:
+				<a href="https://console.cloud.google.com/billing" target="_blank" rel="noopener">Google Cloud Console Billing</a>
+			</li>
+			<br><li>Click the "Add billing account" button</li>
+			<br><li>Go through the billing registration to obtain a valid billing account. This will involve giving your credit card
+				information to Google.</li>
+			<br><li>Open the Google Cloud Console billing projects page here:
+				<a href="https://console.cloud.google.com/billing/projects" target="_blank" rel="noopener">Google Cloud Console
+					Billing Projects</a>
+			</li>
+			<br><li>Go to the "My projects" tab</li>
+			<br><li>Click the 3 dots icon on the right of your project and select "Change billing account"</li>
+			<br><li>Click the "SET ACCOUNT" button. At this point, billing is enabled for your project so you can edit the limits
+				for the APIs you're using.</li>
+			<br><li>Open the Google Cloud Console Places API Page
+				<a href="https://console.developers.google.com/google/maps-apis/apis/places-backend.googleapis.com" target="_blank"
+				 rel="noopener">Google Cloud Console Places API Page</a>
+			</li>
+			<br><li>Click "ENABLE" to enable the Google Places API</li>
+			<br><li>Open the Google Cloud Console Places API Quotas Page
+				<a href="https://console.developers.google.com/google/maps-apis/apis/places-backend.googleapis.com/quotas" target="_blank"
+				 rel="noopener">Google Cloud Console Places API Quotas Page</a>
+			</li>
+			<br><li>
+				Scroll at the bottom, and under "Requests per day", change the maximum to <b>2000</b>. From my
+				testing, it appears 2000 requests would allow you to make about 100 searches per day, which
+				should be enough for most users. The cost for 100 searches would be around 3$, so assuming you
+				make 100 searches per day, the cost at the end of the month would be around 90$. Since Google
+				provides a free credit of 200$, it should cover the 90$ and cost you nothing. Please note
+				this is an estimate: there is absolutely no way to set a limit to the cost, so you'll have
+				to watch your usage during the month to make sure you don't go over.<br>
+				<img src="images/places_set_quota_2000.png" />
+			</li>
+			<br><li>
+				Create budgets for your accounts from
+				<a href="https://console.cloud.google.com/billing" target="_blank" rel="noopener">Google Cloud Console Billing</a>
+				: you should go to the "budgets" tab and click "create budget" to start creating a budget.<br>
+				Note that budgets are <b>only</b> about sending you email notifications, not about
+				limiting your costs at all. It is important to setup budgets so that you are notified by
+				email when your expenses approach the limit of the free credit and will risk to cost you actual
+				money.<br>
+				You should set 2 budgets: one for notifying you as you use the free credit, and one for
+				notifying you that you're starting to get charged with actual real money (those instructions
+				are written to help you avoid that).<br>
+				Here is how to set the budget for notifying you about your free credit usage:
+				<br><img src="images/budget_with_credit.png" style="width: 600px" />
+				<br><br> Here is how to set the budget for notifying you when you're starting to spend real money:
+				<br><img src="images/placecs_budget_without_credit.png" style="width: 600px" />
+				<br><br>Here is how it should look like in the end:
+				<br><img src="images/places_budget_overview.png" style="width: 600px" />
+				<br> You can see I set the budget 150€ because my account's currency is in euros, so I'm leaving a
+				bit of buffer to be safe.
+			</li>
+			<br><li>
+				Make sure you understand how to get to the billing summary page to view your current balance:<br>
+				<a href="https://console.cloud.google.com/billing" target="_blank" rel="noopener">Google Cloud Console Billing</a><br>
+				Your balance (indicated by a red arrow on the screenshot below) should always be 0. If you see
+				it's not 0, it means Google will charge you this amount at the end of the month, so you should
+				stop using the API immediately to avoid further costs. You will need to check this page every
+				day at the beginning to get a sense of how much you're spending, and making sure you're not
+				going over the free quota credit.<br>
+				<img src="images/places_transactions_page.png" style="width: 600px" />
+			</li>
+			<br><li>
+				At this point, <b>if you've followed all the previous steps</b>, you can safely create an API
+				key for your project. For that, open the Google Cloud Credentials page:
+				<a href="https://console.cloud.google.com/apis/credentials" target="_blank" rel="noopener">Google Cloud Console
+					Billing</a><br>
+			</li>
+			<br><li>
+				Click on the blue "Create Credentials" button and select "API key"<br>
+				<img src="images/places_create_credentials.png" />
+			</li>
+			<br><li>
+				Finally copy your API key with the copy button and send it to your phone (by email for example).<br>
+				<img src="images/places_copy_api_key.png" />
+			</li>
+		</ol>
+
+	</div>
+</body>
+
+</html>
