@@ -289,20 +289,37 @@
 
 				<h1>Advanced features</h1>
 
-				<h2 class="devices_android">Setting up personal Google Places API access</h2>
-				<p>
-					Google has granted Map Marker a generous daily free quota for places search requests.<br>
-					That quota is shared among all Map Marker users.<br>
-					There are more and more users on Map Marker and unfortunately the daily search quota limit is
-					reached more and more frequently.<br>
-					When the daily search quota limit is reached for one day, any search request will fail until the
-					next day.<br>
-					Since the daily quota resets every day according to the western pacific time, the most impacted
-					time zone is around the Australian time zone.<br>
-					To avoid this inconvenience, you can setup Google Places API access on your own Google account. The
-					following tutorial can guide you through this procedure:<br>
-					<a href="./help_google_places_api_key.html">Google Places API key access tutorial</a>
-				</p>
+				<h2>Configuring third party search sources</h2>
+				<p>You can add or configure third party search sources in Map Marker from the settings page, under the "Places search sources" section. Depending on the search source, the steps to obtain the configuration will be different. Unfortunately, the process to configure third party search sources is a little tricky, but that's the only way I could keep those features completely free.</p>
+				<ul>
+					<li>
+						Here Places Search API
+						<ol>
+							<li>Create an account here: <a href="https://developer.here.com/authenticationpage">https://developer.here.com/authenticationpage</a></li>
+							<li>Open the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
+							<li>Click "Select a plan for a new project"</li>
+							<li>Select the "Fremium" plan and create your new project</li>
+							<li>Go back to the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
+							<li>Click on your project and search for "APP ID" and "APP CODE" under "JAVASCRIPT / REST"</li>
+							<li>Save the app id and the app code to your device (you'll want to paste them in Map Marker)</li>
+						</ol>
+					</li>
+					<li>
+						Google Places Search API
+						<ol>
+							<li>Get an API key here: <a href="https://developers.google.com/places/web-service/get-api-key">https://developers.google.com/places/web-service/get-api-key</a></li>
+							<li>Use the support page for any troubleshooting: <a href="https://developers.google.com/places/web-service/support">https://developers.google.com/places/web-service/support</a></li>
+							<li>Save the API key to your device (you'll want to paste it in Map Marker)</li>
+						</ol>
+					</li>
+				</ul>
+				<p>Once you have the configuration information:</p>
+				<ol>
+					<li>Click "Add or configure search source"</li>
+					<li>Click on the search source that you want to add/configure</li>
+					<li>Enter/paste the requested configuration values</li>
+					<li>Check the displayed result (success/failure)</li>
+				</ol>
 
 				<h2 class="devices_android">How to use offline maps?</h2>
 				<ol>
