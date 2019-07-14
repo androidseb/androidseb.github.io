@@ -427,35 +427,70 @@
 
 				<a name="devices_android_Configuring_third_party_search_sources"></a>
 				<h2>Configuring third party search sources</h2>
-				<p>You can add or configure third party search sources in Map Marker from the settings page, under the "Places search sources" section. Depending on the search source, the steps to obtain the configuration will be different. Unfortunately, the process to configure third party search sources is a little tricky, but that's the only way I could keep those features completely free.</p>
-				<ul>
-					<li>
-						Here Places Search API
-						<ol>
-							<li>Create an account here: <a href="https://developer.here.com/authenticationpage">https://developer.here.com/authenticationpage</a></li>
-							<li>Open the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
-							<li>Click "Select a plan for a new project"</li>
-							<li>Select the "Fremium" plan and create your new project</li>
-							<li>Go back to the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
-							<li>Click on your project and search for "APP ID" and "APP CODE" under "JAVASCRIPT / REST"</li>
-							<li>Save the app id and the app code to your device (you'll want to paste them in Map Marker)</li>
-						</ol>
-					</li>
-					<li>
-						Google Places Search API
-						<ol>
-							<li>Get an API key here: <a href="https://developers.google.com/places/web-service/get-api-key">https://developers.google.com/places/web-service/get-api-key</a></li>
-							<li>Use the support page for any troubleshooting: <a href="https://developers.google.com/places/web-service/support">https://developers.google.com/places/web-service/support</a></li>
-							<li>Save the API key to your device (you'll want to paste it in Map Marker)</li>
-						</ol>
-					</li>
-				</ul>
-				<p>Once you have the configuration information:</p>
+				<p>You can add or configure third party search sources in Map Marker from the settings page, under the "Places search sources" section.</p>
+				<p>Once you have obtained a third party search source configuration, you can re-use this same configuration on any device running Map Marker.</p>
+				<p>To use a configuration, from the search source menu in Map Marker:</p>
 				<ol>
 					<li>Click "Add or configure search source"</li>
 					<li>Click on the search source that you want to add/configure</li>
 					<li>Enter/paste the requested configuration values</li>
 					<li>Check the displayed result (success/failure)</li>
+				</ol>
+				<p>Below are the different third party sources that can be configured with instructions on how to obtain the configuration values, by increasing order of difficulty.</p>
+				<b>Algolia Places Search API (very easy)</b>
+				<p>Notes:</p>
+				<ul>
+					<li>You will need to use or create a free Algolia account to retrieve the configuration values</li>
+					<li>There is no need for a credit card</li>
+					<li>The free quota is plenty for a single user</li>
+					<li>The configuration values you will need to obtain are <b>Application ID</b> and <b>Search-Only API Key</b></li>
+				</ul>
+				<p>Steps:</p>
+				<ol>
+					<li>Create an account here: <a href="https://www.algolia.com/users/sign_up">https://www.algolia.com/users/sign_up</a></li>
+					<li>Open the dashboard link here: <a href="https://www.algolia.com/dashboard">https://www.algolia.com/dashboard</a></li>
+					<li>Click "API Keys" in the left menu</li>
+					<li>Look at the page to find "Application ID" and "Search-Only API Key" values</li>
+					<li>Save the Application ID and the Search-Only API Key in a way that you can paste them into Map Marker</li>
+				</ol>
+				<b>Here Places Search API (pretty easy)</b>
+				<p>Notes:</p>
+				<ul>
+					<li>You will need to use or create a free HERE account to retrieve the configuration values</li>
+					<li>There is no need for a credit card</li>
+					<li>The free quota is plenty for a single user</li>
+					<li>The configuration values you will need to obtain are <b>app id</b> and <b>app code</b></li>
+				</ul>
+				<p>Steps:</p>
+				<ol>
+					<li>Create an account here: <a href="https://developer.here.com/authenticationpage">https://developer.here.com/authenticationpage</a></li>
+					<li>Open the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
+					<li>Click "Select a plan for a new project"</li>
+					<li>Select the "Fremium" plan and create your new project</li>
+					<li>Go back to the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
+					<li>Click on your project and search for "APP ID" and "APP CODE" under "JAVASCRIPT / REST"</li>
+					<li>Save the app id and the app code in a way that you can paste them into Map Marker</li>
+				</ol>
+				<b>Google Places Search API (very hard)</b>
+				<p>Notes:</p>
+				<ul>
+					<li>!!!FOR ADVANCED USERS ONLY!!!</li>
+					<li>You will need to use or create a free Google account to retrieve the configuration values</li>
+					<li>The free quota should be enough for a single user</li>
+					<li>The configuration value you will need to obtain is the <b>API key</b></li>
+					<li>To get a functional API key, you will need to give your credit card information to Google</li>
+					<li>Google may charge you on the API usage</li>
+					<li>There are ways to limit the usage to only the free quota, to avoid being charged, but they depend on your configuration</li>
+					<li>It is impossible to use the free quota without providing a credit card</li>
+					<li>It is impossible to guarantee no expenses due to an accidental bad configuration</li>
+					<li>I will not provide support for this, you will have to interact with Google directly: <a href="https://developers.google.com/places/web-service/support">https://developers.google.com/places/web-service/support</a></li>
+				</ul>
+				<p>Steps:</p>
+				<ol>
+					<li>Get an API key here: <a href="https://developers.google.com/places/web-service/get-api-key">https://developers.google.com/places/web-service/get-api-key</a></li>
+					<li>Enable billing for your google cloud console account</li>
+					<li>Set a limit on your Places API usage</li>
+					<li>Save the API key in a way that you can paste it into Map Marker</li>
 				</ol>
 
 				<a name="devices_android_How_to_use_offline_maps"></a>
@@ -872,35 +907,70 @@
 
 				<a name="devices_ios_Configuring_third_party_search_sources"></a>
 				<h2>Configuring third party search sources</h2>
-				<p>You can add or configure third party search sources in Map Marker from the settings page, under the "Places search sources" section. Depending on the search source, the steps to obtain the configuration will be different. Unfortunately, the process to configure third party search sources is a little tricky, but that's the only way I could keep those features completely free.</p>
-				<ul>
-					<li>
-						Here Places Search API
-						<ol>
-							<li>Create an account here: <a href="https://developer.here.com/authenticationpage">https://developer.here.com/authenticationpage</a></li>
-							<li>Open the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
-							<li>Click "Select a plan for a new project"</li>
-							<li>Select the "Fremium" plan and create your new project</li>
-							<li>Go back to the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
-							<li>Click on your project and search for "APP ID" and "APP CODE" under "JAVASCRIPT / REST"</li>
-							<li>Save the app id and the app code to your device (you'll want to paste them in Map Marker)</li>
-						</ol>
-					</li>
-					<li>
-						Google Places Search API
-						<ol>
-							<li>Get an API key here: <a href="https://developers.google.com/places/web-service/get-api-key">https://developers.google.com/places/web-service/get-api-key</a></li>
-							<li>Use the support page for any troubleshooting: <a href="https://developers.google.com/places/web-service/support">https://developers.google.com/places/web-service/support</a></li>
-							<li>Save the API key to your device (you'll want to paste it in Map Marker)</li>
-						</ol>
-					</li>
-				</ul>
-				<p>Once you have the configuration information:</p>
+				<p>You can add or configure third party search sources in Map Marker from the settings page, under the "Places search sources" section.</p>
+				<p>Once you have obtained a third party search source configuration, you can re-use this same configuration on any device running Map Marker.</p>
+				<p>To use a configuration, from the search source menu in Map Marker:</p>
 				<ol>
 					<li>Click "Add or configure search source"</li>
 					<li>Click on the search source that you want to add/configure</li>
 					<li>Enter/paste the requested configuration values</li>
 					<li>Check the displayed result (success/failure)</li>
+				</ol>
+				<p>Below are the different third party sources that can be configured with instructions on how to obtain the configuration values, by increasing order of difficulty.</p>
+				<b>Algolia Places Search API (very easy)</b>
+				<p>Notes:</p>
+				<ul>
+					<li>You will need to use or create a free Algolia account to retrieve the configuration values</li>
+					<li>There is no need for a credit card</li>
+					<li>The free quota is plenty for a single user</li>
+					<li>The configuration values you will need to obtain are <b>Application ID</b> and <b>Search-Only API Key</b></li>
+				</ul>
+				<p>Steps:</p>
+				<ol>
+					<li>Create an account here: <a href="https://www.algolia.com/users/sign_up">https://www.algolia.com/users/sign_up</a></li>
+					<li>Open the dashboard link here: <a href="https://www.algolia.com/dashboard">https://www.algolia.com/dashboard</a></li>
+					<li>Click "API Keys" in the left menu</li>
+					<li>Look at the page to find "Application ID" and "Search-Only API Key" values</li>
+					<li>Save the Application ID and the Search-Only API Key in a way that you can paste them into Map Marker</li>
+				</ol>
+				<b>Here Places Search API (pretty easy)</b>
+				<p>Notes:</p>
+				<ul>
+					<li>You will need to use or create a free HERE account to retrieve the configuration values</li>
+					<li>There is no need for a credit card</li>
+					<li>The free quota is plenty for a single user</li>
+					<li>The configuration values you will need to obtain are <b>app id</b> and <b>app code</b></li>
+				</ul>
+				<p>Steps:</p>
+				<ol>
+					<li>Create an account here: <a href="https://developer.here.com/authenticationpage">https://developer.here.com/authenticationpage</a></li>
+					<li>Open the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
+					<li>Click "Select a plan for a new project"</li>
+					<li>Select the "Fremium" plan and create your new project</li>
+					<li>Go back to the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
+					<li>Click on your project and search for "APP ID" and "APP CODE" under "JAVASCRIPT / REST"</li>
+					<li>Save the app id and the app code in a way that you can paste them into Map Marker</li>
+				</ol>
+				<b>Google Places Search API (very hard)</b>
+				<p>Notes:</p>
+				<ul>
+					<li>!!!FOR ADVANCED USERS ONLY!!!</li>
+					<li>You will need to use or create a free Google account to retrieve the configuration values</li>
+					<li>The free quota should be enough for a single user</li>
+					<li>The configuration value you will need to obtain is the <b>API key</b></li>
+					<li>To get a functional API key, you will need to give your credit card information to Google</li>
+					<li>Google may charge you on the API usage</li>
+					<li>There are ways to limit the usage to only the free quota, to avoid being charged, but they depend on your configuration</li>
+					<li>It is impossible to use the free quota without providing a credit card</li>
+					<li>It is impossible to guarantee no expenses due to an accidental bad configuration</li>
+					<li>I will not provide support for this, you will have to interact with Google directly: <a href="https://developers.google.com/places/web-service/support">https://developers.google.com/places/web-service/support</a></li>
+				</ul>
+				<p>Steps:</p>
+				<ol>
+					<li>Get an API key here: <a href="https://developers.google.com/places/web-service/get-api-key">https://developers.google.com/places/web-service/get-api-key</a></li>
+					<li>Enable billing for your google cloud console account</li>
+					<li>Set a limit on your Places API usage</li>
+					<li>Save the API key in a way that you can paste it into Map Marker</li>
 				</ol>
 
 				<a name="devices_ios_How_can_I_import_my_starred_locations_from_Google_Maps_locations_marked_with_a_star_on_Google_Maps"></a>
@@ -1288,35 +1358,70 @@
 
 				<a name="devices_web_Configuring_third_party_search_sources"></a>
 				<h2>Configuring third party search sources</h2>
-				<p>You can add or configure third party search sources in Map Marker from the settings page, under the "Places search sources" section. Depending on the search source, the steps to obtain the configuration will be different. Unfortunately, the process to configure third party search sources is a little tricky, but that's the only way I could keep those features completely free.</p>
-				<ul>
-					<li>
-						Here Places Search API
-						<ol>
-							<li>Create an account here: <a href="https://developer.here.com/authenticationpage">https://developer.here.com/authenticationpage</a></li>
-							<li>Open the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
-							<li>Click "Select a plan for a new project"</li>
-							<li>Select the "Fremium" plan and create your new project</li>
-							<li>Go back to the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
-							<li>Click on your project and search for "APP ID" and "APP CODE" under "JAVASCRIPT / REST"</li>
-							<li>Save the app id and the app code to your device (you'll want to paste them in Map Marker)</li>
-						</ol>
-					</li>
-					<li>
-						Google Places Search API
-						<ol>
-							<li>Get an API key here: <a href="https://developers.google.com/places/web-service/get-api-key">https://developers.google.com/places/web-service/get-api-key</a></li>
-							<li>Use the support page for any troubleshooting: <a href="https://developers.google.com/places/web-service/support">https://developers.google.com/places/web-service/support</a></li>
-							<li>Save the API key to your device (you'll want to paste it in Map Marker)</li>
-						</ol>
-					</li>
-				</ul>
-				<p>Once you have the configuration information:</p>
+				<p>You can add or configure third party search sources in Map Marker from the settings page, under the "Places search sources" section.</p>
+				<p>Once you have obtained a third party search source configuration, you can re-use this same configuration on any device running Map Marker.</p>
+				<p>To use a configuration, from the search source menu in Map Marker:</p>
 				<ol>
 					<li>Click "Add or configure search source"</li>
 					<li>Click on the search source that you want to add/configure</li>
 					<li>Enter/paste the requested configuration values</li>
 					<li>Check the displayed result (success/failure)</li>
+				</ol>
+				<p>Below are the different third party sources that can be configured with instructions on how to obtain the configuration values, by increasing order of difficulty.</p>
+				<b>Algolia Places Search API (very easy)</b>
+				<p>Notes:</p>
+				<ul>
+					<li>You will need to use or create a free Algolia account to retrieve the configuration values</li>
+					<li>There is no need for a credit card</li>
+					<li>The free quota is plenty for a single user</li>
+					<li>The configuration values you will need to obtain are <b>Application ID</b> and <b>Search-Only API Key</b></li>
+				</ul>
+				<p>Steps:</p>
+				<ol>
+					<li>Create an account here: <a href="https://www.algolia.com/users/sign_up">https://www.algolia.com/users/sign_up</a></li>
+					<li>Open the dashboard link here: <a href="https://www.algolia.com/dashboard">https://www.algolia.com/dashboard</a></li>
+					<li>Click "API Keys" in the left menu</li>
+					<li>Look at the page to find "Application ID" and "Search-Only API Key" values</li>
+					<li>Save the Application ID and the Search-Only API Key in a way that you can paste them into Map Marker</li>
+				</ol>
+				<b>Here Places Search API (pretty easy)</b>
+				<p>Notes:</p>
+				<ul>
+					<li>You will need to use or create a free HERE account to retrieve the configuration values</li>
+					<li>There is no need for a credit card</li>
+					<li>The free quota is plenty for a single user</li>
+					<li>The configuration values you will need to obtain are <b>app id</b> and <b>app code</b></li>
+				</ul>
+				<p>Steps:</p>
+				<ol>
+					<li>Create an account here: <a href="https://developer.here.com/authenticationpage">https://developer.here.com/authenticationpage</a></li>
+					<li>Open the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
+					<li>Click "Select a plan for a new project"</li>
+					<li>Select the "Fremium" plan and create your new project</li>
+					<li>Go back to the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
+					<li>Click on your project and search for "APP ID" and "APP CODE" under "JAVASCRIPT / REST"</li>
+					<li>Save the app id and the app code in a way that you can paste them into Map Marker</li>
+				</ol>
+				<b>Google Places Search API (very hard)</b>
+				<p>Notes:</p>
+				<ul>
+					<li>!!!FOR ADVANCED USERS ONLY!!!</li>
+					<li>You will need to use or create a free Google account to retrieve the configuration values</li>
+					<li>The free quota should be enough for a single user</li>
+					<li>The configuration value you will need to obtain is the <b>API key</b></li>
+					<li>To get a functional API key, you will need to give your credit card information to Google</li>
+					<li>Google may charge you on the API usage</li>
+					<li>There are ways to limit the usage to only the free quota, to avoid being charged, but they depend on your configuration</li>
+					<li>It is impossible to use the free quota without providing a credit card</li>
+					<li>It is impossible to guarantee no expenses due to an accidental bad configuration</li>
+					<li>I will not provide support for this, you will have to interact with Google directly: <a href="https://developers.google.com/places/web-service/support">https://developers.google.com/places/web-service/support</a></li>
+				</ul>
+				<p>Steps:</p>
+				<ol>
+					<li>Get an API key here: <a href="https://developers.google.com/places/web-service/get-api-key">https://developers.google.com/places/web-service/get-api-key</a></li>
+					<li>Enable billing for your google cloud console account</li>
+					<li>Set a limit on your Places API usage</li>
+					<li>Save the API key in a way that you can paste it into Map Marker</li>
 				</ol>
 
 				<a name="devices_web_How_can_I_import_my_starred_locations_from_Google_Maps_locations_marked_with_a_star_on_Google_Maps"></a>
