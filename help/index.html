@@ -427,7 +427,7 @@
 
 				<a name="devices_android_Configuring_third_party_search_sources"></a>
 				<h2>Configuring third party search sources</h2>
-				<p>You can add or configure third party search sources in Map Marker from the settings page, under the "Places search sources" section.</p>
+				<p>You can add or configure third party search sources in Map Marker from the "Places search sources" section menu.</p>
 				<p>Once you have obtained a third party search source configuration, you can re-use this same configuration on any device running Map Marker.</p>
 				<p>To use a configuration, from the search source menu in Map Marker:</p>
 				<ol>
@@ -436,8 +436,28 @@
 					<li>Enter/paste the requested configuration values</li>
 					<li>Check the displayed result (success/failure)</li>
 				</ol>
-				<p>Below are the different third party sources that can be configured with instructions on how to obtain the configuration values, by increasing order of difficulty.</p>
-				<b>Algolia Places Search API (very easy)</b>
+				<p>Below are the different third party sources that can be configured with instructions on how to obtain the configuration values, by increasing order of difficulty. From user feedback so far, HERE seems like the best option because it's easy to setup and the search result quality is pretty good.</p>
+				<b>Here Places Search API (very easy)</b>
+				<p>Notes:</p>
+				<ul>
+					<li>You will need to use or create a free HERE account to retrieve the configuration values</li>
+					<li>There is no need for a credit card</li>
+					<li>The free quota is plenty for a single user</li>
+					<li>The configuration values you will need to obtain are <b>App ID</b> and <b>App Code</b></li>
+				</ul>
+				<p>Steps:</p>
+				<ol>
+					<li>Create an account here: <a href="https://developer.here.com/authenticationpage">https://developer.here.com/authenticationpage</a></li>
+					<li>Open the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
+					<li>Click "Select a plan for a new project"</li>
+					<li>Select the "Fremium" plan and create your new project</li>
+					<li>Go back to the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
+					<li>Click on your project</li>
+					<li>Under "JS REST" / "REST & XYZ HUB API/CLI" click on "Generage App ID and App Code"</li>
+					<li>Under "JS REST" / "REST & XYZ HUB API/CLI" find your App ID under "APP ID" and your App Code under "APP CODE"</li>
+					<li>Save the App ID and the App Code in a way that you can paste them into Map Marker</li>
+				</ol>
+				<b>Algolia Places Search API (pretty easy)</b>
 				<p>Notes:</p>
 				<ul>
 					<li>You will need to use or create a free Algolia account to retrieve the configuration values</li>
@@ -452,24 +472,6 @@
 					<li>Click "API Keys" in the left menu</li>
 					<li>Look at the page to find "Application ID" and "Search-Only API Key" values</li>
 					<li>Save the Application ID and the Search-Only API Key in a way that you can paste them into Map Marker</li>
-				</ol>
-				<b>Here Places Search API (pretty easy)</b>
-				<p>Notes:</p>
-				<ul>
-					<li>You will need to use or create a free HERE account to retrieve the configuration values</li>
-					<li>There is no need for a credit card</li>
-					<li>The free quota is plenty for a single user</li>
-					<li>The configuration values you will need to obtain are <b>app id</b> and <b>app code</b></li>
-				</ul>
-				<p>Steps:</p>
-				<ol>
-					<li>Create an account here: <a href="https://developer.here.com/authenticationpage">https://developer.here.com/authenticationpage</a></li>
-					<li>Open the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
-					<li>Click "Select a plan for a new project"</li>
-					<li>Select the "Fremium" plan and create your new project</li>
-					<li>Go back to the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
-					<li>Click on your project and search for "APP ID" and "APP CODE" under "JAVASCRIPT / REST"</li>
-					<li>Save the app id and the app code in a way that you can paste them into Map Marker</li>
 				</ol>
 				<b>Google Places Search API (very hard)</b>
 				<p>Notes:</p>
@@ -907,7 +909,7 @@
 
 				<a name="devices_ios_Configuring_third_party_search_sources"></a>
 				<h2>Configuring third party search sources</h2>
-				<p>You can add or configure third party search sources in Map Marker from the settings page, under the "Places search sources" section.</p>
+				<p>You can add or configure third party search sources in Map Marker from the "Places search sources" section menu.</p>
 				<p>Once you have obtained a third party search source configuration, you can re-use this same configuration on any device running Map Marker.</p>
 				<p>To use a configuration, from the search source menu in Map Marker:</p>
 				<ol>
@@ -916,8 +918,28 @@
 					<li>Enter/paste the requested configuration values</li>
 					<li>Check the displayed result (success/failure)</li>
 				</ol>
-				<p>Below are the different third party sources that can be configured with instructions on how to obtain the configuration values, by increasing order of difficulty.</p>
-				<b>Algolia Places Search API (very easy)</b>
+				<p>Below are the different third party sources that can be configured with instructions on how to obtain the configuration values, by increasing order of difficulty. From user feedback so far, HERE seems like the best option because it's easy to setup and the search result quality is pretty good.</p>
+				<b>Here Places Search API (very easy)</b>
+				<p>Notes:</p>
+				<ul>
+					<li>You will need to use or create a free HERE account to retrieve the configuration values</li>
+					<li>There is no need for a credit card</li>
+					<li>The free quota is plenty for a single user</li>
+					<li>The configuration values you will need to obtain are <b>App ID</b> and <b>App Code</b></li>
+				</ul>
+				<p>Steps:</p>
+				<ol>
+					<li>Create an account here: <a href="https://developer.here.com/authenticationpage">https://developer.here.com/authenticationpage</a></li>
+					<li>Open the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
+					<li>Click "Select a plan for a new project"</li>
+					<li>Select the "Fremium" plan and create your new project</li>
+					<li>Go back to the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
+					<li>Click on your project</li>
+					<li>Under "JS REST" / "REST & XYZ HUB API/CLI" click on "Generage App ID and App Code"</li>
+					<li>Under "JS REST" / "REST & XYZ HUB API/CLI" find your App ID under "APP ID" and your App Code under "APP CODE"</li>
+					<li>Save the App ID and the App Code in a way that you can paste them into Map Marker</li>
+				</ol>
+				<b>Algolia Places Search API (pretty easy)</b>
 				<p>Notes:</p>
 				<ul>
 					<li>You will need to use or create a free Algolia account to retrieve the configuration values</li>
@@ -932,24 +954,6 @@
 					<li>Click "API Keys" in the left menu</li>
 					<li>Look at the page to find "Application ID" and "Search-Only API Key" values</li>
 					<li>Save the Application ID and the Search-Only API Key in a way that you can paste them into Map Marker</li>
-				</ol>
-				<b>Here Places Search API (pretty easy)</b>
-				<p>Notes:</p>
-				<ul>
-					<li>You will need to use or create a free HERE account to retrieve the configuration values</li>
-					<li>There is no need for a credit card</li>
-					<li>The free quota is plenty for a single user</li>
-					<li>The configuration values you will need to obtain are <b>app id</b> and <b>app code</b></li>
-				</ul>
-				<p>Steps:</p>
-				<ol>
-					<li>Create an account here: <a href="https://developer.here.com/authenticationpage">https://developer.here.com/authenticationpage</a></li>
-					<li>Open the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
-					<li>Click "Select a plan for a new project"</li>
-					<li>Select the "Fremium" plan and create your new project</li>
-					<li>Go back to the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
-					<li>Click on your project and search for "APP ID" and "APP CODE" under "JAVASCRIPT / REST"</li>
-					<li>Save the app id and the app code in a way that you can paste them into Map Marker</li>
 				</ol>
 				<b>Google Places Search API (very hard)</b>
 				<p>Notes:</p>
@@ -1358,7 +1362,7 @@
 
 				<a name="devices_web_Configuring_third_party_search_sources"></a>
 				<h2>Configuring third party search sources</h2>
-				<p>You can add or configure third party search sources in Map Marker from the settings page, under the "Places search sources" section.</p>
+				<p>You can add or configure third party search sources in Map Marker from the "Places search sources" section menu.</p>
 				<p>Once you have obtained a third party search source configuration, you can re-use this same configuration on any device running Map Marker.</p>
 				<p>To use a configuration, from the search source menu in Map Marker:</p>
 				<ol>
@@ -1367,8 +1371,28 @@
 					<li>Enter/paste the requested configuration values</li>
 					<li>Check the displayed result (success/failure)</li>
 				</ol>
-				<p>Below are the different third party sources that can be configured with instructions on how to obtain the configuration values, by increasing order of difficulty.</p>
-				<b>Algolia Places Search API (very easy)</b>
+				<p>Below are the different third party sources that can be configured with instructions on how to obtain the configuration values, by increasing order of difficulty. From user feedback so far, HERE seems like the best option because it's easy to setup and the search result quality is pretty good.</p>
+				<b>Here Places Search API (very easy)</b>
+				<p>Notes:</p>
+				<ul>
+					<li>You will need to use or create a free HERE account to retrieve the configuration values</li>
+					<li>There is no need for a credit card</li>
+					<li>The free quota is plenty for a single user</li>
+					<li>The configuration values you will need to obtain are <b>App ID</b> and <b>App Code</b></li>
+				</ul>
+				<p>Steps:</p>
+				<ol>
+					<li>Create an account here: <a href="https://developer.here.com/authenticationpage">https://developer.here.com/authenticationpage</a></li>
+					<li>Open the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
+					<li>Click "Select a plan for a new project"</li>
+					<li>Select the "Fremium" plan and create your new project</li>
+					<li>Go back to the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
+					<li>Click on your project</li>
+					<li>Under "JS REST" / "REST & XYZ HUB API/CLI" click on "Generage App ID and App Code"</li>
+					<li>Under "JS REST" / "REST & XYZ HUB API/CLI" find your App ID under "APP ID" and your App Code under "APP CODE"</li>
+					<li>Save the App ID and the App Code in a way that you can paste them into Map Marker</li>
+				</ol>
+				<b>Algolia Places Search API (pretty easy)</b>
 				<p>Notes:</p>
 				<ul>
 					<li>You will need to use or create a free Algolia account to retrieve the configuration values</li>
@@ -1383,24 +1407,6 @@
 					<li>Click "API Keys" in the left menu</li>
 					<li>Look at the page to find "Application ID" and "Search-Only API Key" values</li>
 					<li>Save the Application ID and the Search-Only API Key in a way that you can paste them into Map Marker</li>
-				</ol>
-				<b>Here Places Search API (pretty easy)</b>
-				<p>Notes:</p>
-				<ul>
-					<li>You will need to use or create a free HERE account to retrieve the configuration values</li>
-					<li>There is no need for a credit card</li>
-					<li>The free quota is plenty for a single user</li>
-					<li>The configuration values you will need to obtain are <b>app id</b> and <b>app code</b></li>
-				</ul>
-				<p>Steps:</p>
-				<ol>
-					<li>Create an account here: <a href="https://developer.here.com/authenticationpage">https://developer.here.com/authenticationpage</a></li>
-					<li>Open the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
-					<li>Click "Select a plan for a new project"</li>
-					<li>Select the "Fremium" plan and create your new project</li>
-					<li>Go back to the projects page here: <a href="https://developer.here.com/projects">https://developer.here.com/projects</a></li>
-					<li>Click on your project and search for "APP ID" and "APP CODE" under "JAVASCRIPT / REST"</li>
-					<li>Save the app id and the app code in a way that you can paste them into Map Marker</li>
 				</ol>
 				<b>Google Places Search API (very hard)</b>
 				<p>Notes:</p>
