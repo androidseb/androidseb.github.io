@@ -150,7 +150,8 @@
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Problems_with_Google_Earth">Problems with Google Earth</a><br>
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Problems_with_Google_My_Maps">Problems with Google My Maps</a><br>
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Premium_troubleshooting">Premium troubleshooting</a><br>
-				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Problems_with_Google_Play_downloads">Problems with Google Play downloads</a><br>
+				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Problems_with_corrupted_files_on_app_launch_code_14_SQLITE_CANTOPEN">Problems with corrupted files on app launch (code 14 SQLITE_CANTOPEN)</a><br>
+				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Problems_with_Google_Play_Services">Problems with Google Play Services</a><br>
 
 
 				<a name="devices_android_User_interface_description"></a>
@@ -621,9 +622,36 @@
 				</ol>
 				<p>If these steps don't work you can send me your order number for confirmation and I will help you.</p>
 
-				<a name="devices_android_Problems_with_Google_Play_downloads"></a>
-				<h2>Problems with Google Play downloads</h2>
-				If you have trouble downloading the app binary from Google Play, you can find the APK files <a href="https://github.com/androidseb/androidseb.github.io/releases">here</a>
+				<a name="devices_android_Problems_with_corrupted_files_on_app_launch_code_14_SQLITE_CANTOPEN"></a>
+				<h2>Problems with corrupted files on app launch (code 14 SQLITE_CANTOPEN)</h2>
+				<p>
+					This problem typically indicates a problem with the system data restoring from Google Drive on app install.
+					After installing the app, the app data has been restored in a corrupted state causing this issue.
+				</p>
+				<p>If you encounter this problem:</p>
+				<ol>
+					<li>IMPORTANT: make sure you have backed up your data because this involves deleting the app data from the device</li>
+					<li>Open the system settings</li>
+					<li>Applications</li>
+					<li>Map Marker</li>
+					<li>Storage</li>
+					<li>CLEAR STORAGE</li>
+				</ol>
+
+				<a name="devices_android_Problems_with_Google_Play_Services"></a>
+				<h2>Problems with Google Play Services</h2>
+				<p>
+					Some problems with the Google Play Services app can prevent the map display from loading.
+					Sometimes, you can fix this by clearing the Google Play Services app data:
+				</p>
+				<ol>
+					<li>Open the system settings</li>
+					<li>Applications</li>
+					<li>Google Play Services</li>
+					<li>Storage</li>
+					<li>CLEAR STORAGE</li>
+					<li>CLEAR ALL DATA</li>
+				</ol>
 			</div>
 			<div class="devices_ios">
 				<a style="display:inline-block;" href="#devices_ios_User_interface_description"><b>User interface description</b></a><br>
