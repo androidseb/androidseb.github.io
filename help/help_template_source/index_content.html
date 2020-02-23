@@ -233,39 +233,30 @@
 					<li class="devices_web">The exported file should download from your browser</li>
 				</ol>
 
-				<h2 class="devices_android">How to import your markers from a KML, KMZ or CSV file?</h2>
+				<h2>How to import your markers from a KML, KMZ or CSV file?</h2>
 				<ol>
-					<li>Download the file to your device</li>
-					<li>Open the side drawer by clicking the left button of the main action bar</li>
-					<li>Open the settings by clicking "settings"</li>
-					<li>Scroll down and click "Import/Export"</li>
-					<li>Select "Import"</li>
-					<li>Select the file to import from the in-app file explorer</li>
+					<li class="devices_android">Download the file to your device</li>
+					<li class="devices_android">Open the side drawer by clicking the left button of the main action bar</li>
+					<li class="devices_android">Open the settings by clicking "settings"</li>
+					<li class="devices_android">Scroll down and click "Import/Export"</li>
+					<li class="devices_android">Select "Import"</li>
+					<li class="devices_android">Select the file to import from the in-app file explorer</li>
+					<li class="devices_ios">Open the file details</li>
+					<li class="devices_ios">Find the "open with" option</li>
+					<li class="devices_ios">You should see a list of apps to open the file with</li>
+					<li class="devices_ios">In the list of apps, select Map Marker</li>
+					<li class="devices_ios">Map Marker will start and you will show a confirmation prompt</li>
+					<li class="devices_ios">Click yes to import the file</li>
+					<li class="devices_web">Open the left drawer</li>
+					<li class="devices_web">Click on the map file to open the file options menu</li>
+					<li class="devices_web">Select the "import markers" option</li>
+					<li class="devices_web">Select the file from your computer and the import will start</li>
 				</ol>
 				<p>
 					Note: the CSV file import will only work if the file has "Latitude" and "Longitude" columns.
 					To see an example of how the file should look like, you can export a CSV file from Map Marker
 					and send it to yourself.
 				</p>
-
-				<h2 class="devices_ios">How to import your markers from a KMZ file?</h2>
-				<ol>
-					<li>Open the KMZ file details</li>
-					<li>Find the "open with" option</li>
-					<li>You should see a list of apps to open the file with</li>
-					<li>In the list of apps, select Map Marker</li>
-					<li>Map Marker will start and you will show a confirmation prompt</li>
-					<li>Click yes to import the file</li>
-				</ol>
-
-				<h2 class="devices_web">How to import your markers from a KMZ file?</h2>
-				<ol>
-					<li>Open the left drawer</li>
-					<li>Click on the map file to open the file options menu</li>
-					<li>Select the "import markers" option</li>
-					<li>Select the KMZ file from your computer and the import will start</li>
-				</ol>
-
 
 				<h2>Migrating your data to a new device</h2>
 				<p>If you lost your device or did a factory reset or simply got a new device, you might need to migrate your previous markers data to this new device. Depending on your case, there are several ways to do this...</p>
@@ -300,7 +291,22 @@
 					<li>Enter/paste the requested configuration values</li>
 					<li>Check the displayed result (success/failure)</li>
 				</ol>
-				<p>Below are the different third party sources that can be configured with instructions on how to obtain the configuration values, by increasing order of difficulty. From user feedback so far, "HERE" seems like the best option because it's easy to setup and the search result quality is pretty good.</p>
+				<p>Below are the different third party sources that can be configured with instructions on how to obtain the configuration values, by increasing order of difficulty. <b>Microsoft Bing Places Search</b> seems like the best option because it's easy to setup and the search result quality is pretty good.</p>
+				<b>Bing Places Search API (very easy)</b>
+				<p>Notes:</p>
+				<ul>
+					<li>You will need to use or create a free microsoft account to retrieve the configuration values</li>
+					<li>There is no need for a credit card</li>
+					<li>The free quota is plenty for a single user</li>
+					<li>The configuration value you will need to obtain is a <b>Bing Places API Key</b></li>
+				</ul>
+				<p>Steps:</p>
+				<ol>
+					<li>Follow the instructions here: <a href="https://docs.microsoft.com/en-us/bingmaps/getting-started/bing-maps-dev-center-help/getting-a-bing-maps-key">https://docs.microsoft.com/en-us/bingmaps/getting-started/bing-maps-dev-center-help/getting-a-bing-maps-key</a></li>
+					<li>Use the following key type: "Bing Maps Keys for Business and Personal Use"</li>
+					<li>Use the following application type: "Website"</li>
+					<li>You can then create/retrieve the key from here: <a href="https://www.bingmapsportal.com/Application">https://www.bingmapsportal.com/Application</a> under "My Account" &gt; "My Keys"</li>
+				</ol>
 				<b>"Here" Places Search API (very easy)</b>
 				<p>Notes:</p>
 				<ul>
