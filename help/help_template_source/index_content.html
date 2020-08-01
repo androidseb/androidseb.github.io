@@ -513,14 +513,30 @@
 				<p>If these steps don't work you can send me your order number for confirmation and I will help you.</p>
 
 
-				<h1 class="devices_android">Troubleshooting and known problems</h1>
+				<h1>Troubleshooting and known problems</h1>
 
-				<h2>Problems with Google My Maps</h2>
+				<h2>Cloud sync error: 404 file not found</h2>
+				<p>
+					When performing cloud sync, this error can occur if some remote cloud files have been deleted.<br>
+					This can happen if you (or one of your collaborators if you're sharing access) have deleted the cloud files from your cloud storage account.<br>
+					When this error happens, you can no longer sync to the cloud map and it also probably means that the only copy of your data is on your device, since the cloud data is gone.<br>
+					The recommended way to proceed in case you encounter this error is the following:
+					<ol>
+						<li>Export your markers as a KMZ file</li>
+						<li>To minimize the risks of losing the data, create a copy of that exported file somewhere like a secondary device, or a cloud storage account</li>
+						<li>By default, Map Marker creates a dedicated folder in your cloud storage account called "Map Marker Places Organizer": identify the source of the cloud data deletion so that it doesn't happen again, for example, if one of your collaborators deleted some file accidentally (e.g. "accidental cleanup"), explain them why not deleting these files is important</li>
+						<li>Create a new cloud map</li>
+						<li>Import the data from the KMZ file</li>
+						<li>Sync your cloud map</li>
+					</ol>
+				</p>
+
+				<h2 class="devices_android">Problems with Google My Maps</h2>
 				<p>Google My Maps cannot import the KML/KMZ files produced by Map Marker if they contain the default folder, because it
 					cannot handle an empty folder name. To work around this, you will need to import only one folder at a time, that is
 					not the default folder.</p>
 
-				<h2>Premium troubleshooting</h2>
+				<h2 class="devices_android">Premium troubleshooting</h2>
 				<p>When you purchase the premium, it becomes available for life for your Google account. The Google account granted with
 					the premium access is the one used to perform the purchase. Upon purchasing the premium, you will receive a confirmation
 					email with an order number. From then on, you can use the premium on as many devices as you want. However you will need
@@ -535,7 +551,7 @@
 				</ol>
 				<p>If these steps don't work you can send me your order number for confirmation and I will help you.</p>
 
-				<h2>Problems with corrupted files on app launch (code 14 SQLITE_CANTOPEN)</h2>
+				<h2 class="devices_android">Problems with corrupted files on app launch (code 14 SQLITE_CANTOPEN)</h2>
 				<p>
 					This problem typically indicates a problem with the system data restoring from Google Drive on app install.
 					After installing the app, the app data has been restored in a corrupted state causing this issue.
@@ -550,7 +566,7 @@
 					<li>CLEAR STORAGE</li>
 				</ol>
 
-				<h2>Problems with Google Play Services</h2>
+				<h2 class="devices_android">Problems with Google Play Services</h2>
 				<p>
 					Some problems with the Google Play Services app can prevent the map display from loading.
 					Sometimes, you can fix this by clearing the Google Play Services app data:
