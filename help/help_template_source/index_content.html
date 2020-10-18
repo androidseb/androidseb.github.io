@@ -445,6 +445,77 @@
 					<li>Your images should be in the exported folder</li>
 				</ol>
 
+				<h2 class="devices_android">Amazon Web Service S3 setup</h2>
+				<p>
+					Using the AWS S3 cloud sync requires you to create an <b>S3 bucket</b>, an <b>access policy</b> defining access to it, and an <b>S3 user's access key</b> to access the bucket with that policy.<br>
+					The full configuation steps are outlined here:
+				</p>
+				<ol type="A">
+					<li>If you don't have one already, create an AWS account: <a href="https://aws.amazon.com/console/" target="_blank" rel="noopener">https://aws.amazon.com/console/</a></li>
+					<li>Create the S3 bucket by following the instructions here: <a href="https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html" target="_blank" rel="noopener">https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html</a></li>
+					<li>Unless you have a special use case and you know what you're doing, ensure you followed the instructions to <b>block all public access</b> during the bucket setup</li>
+					<li>Create an IAM policy to define access to your S3 bucket:
+						<ol>
+							<li>Open the IAM policies page: <a href="https://console.aws.amazon.com/iam/home#/policies" target="_blank" rel="noopener">https://console.aws.amazon.com/iam/home#/policies</a></li>
+							<li>Click "Create policy" at the top, this will open the policy creation page</li>
+							<li>Switch to the JSON tab</li>
+							<li>Paste the following JSON text after replacing "MY_S3_BUCKET_NAME" with your bucket name:
+								<textarea cols="80" rows="17" readonly>{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Effect": "Allow",
+			"Action": [
+				"s3:PutObject",
+				"s3:GetObject",
+				"s3:ListBucket"
+			],
+			"Resource": [
+				"arn:aws:s3:::MY_S3_BUCKET_NAME",
+				"arn:aws:s3:::MY_S3_BUCKET_NAME/*"
+			]
+		}
+	]
+}
+								</textarea>
+							</li>
+							<li>Click "Review policy" at the bottom</li>
+							<li>Enter the policy name at the top (e.g. "map_marker_sync_policy")</li>
+							<li>Click "Create policy" at the bottom</li>
+						</ol>
+					</li>
+					<li>Create a bucket user with their access key:
+						<ol>
+							<li>Open the IAM users page: <a href="https://console.aws.amazon.com/iam/home?#/users" target="_blank" rel="noopener">https://console.aws.amazon.com/iam/home?#/users</a></li>
+							<li>Click "Add User"</li>
+							<li>Enter the user name you want: this is only used for later reference, so pick something that makes sense to you</li>
+							<li>Under "Access type", tick the "Programatic access" checkbox</li>
+							<li>Click "Next: Permissions"</li>
+							<li>On the permissions page, select "Attach existing policies directly"</li>
+							<li>Search for the policy you created (e.g. "map_marker_sync_policy") and check its checkbox</li>
+							<li>Click "Next: Tags"</li>
+							<li>Click "Next: Review"</li>
+							<li>Click "Create user"</li>
+							<li>You will land on the confirmation page where the <b>Access key ID</b> and the <b>Secret access key</b> will be available</li>
+							<li>Copy and save the information somewhere safe</li>
+							<li>Click "Close"</li>
+						</ol>
+					</li>
+					<li>All set! To use the AWS S3 cloud sync in Map Marker, you will need to enter:
+						<ol>
+							<li>The S3 bucket name</li>
+							<li>The access key ID</li>
+							<li>The access key secret</li>
+						</ol>
+					</li>
+				</ol>
+				<p>
+					<b>IMPORTANT NOTES:</b>
+					<ol>
+						<li>The Map Marker cloud sync for AWS <b>will not detect</b> concurrent devices writing sync data simultaneously. You should only sync-write one device at a time: if two devices sync-write at the same time, there is a chance that the changes coming from one of the two devices will be ignored and lost. This is due to the way AWS S3 is built as a distributed system, and only applies to devices writing data. Read-only sync doesn't have a limit on number of devices at the same time.</li>
+						<li>You can create a read-only policy with an associated read-only user by following these steps and removing the line containing "s3:PutObject" in the JSON sample. This is great if you want to grant read-only access to some people and read-write access to other people.</li>
+					</ol>
+				</p>
 
 				<h1>FAQ</h1>
 
