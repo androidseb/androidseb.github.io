@@ -1436,6 +1436,8 @@
 				<a style="display:inline-block;" href="#devices_web_Troubleshooting_and_known_problems"><b>Troubleshooting and known problems</b></a><br>
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_web_Cloud_sync_error_404_file_not_found">Cloud sync error: 404 file not found</a><br>
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_web_QuotaExceededError">QuotaExceededError</a><br>
+				<a style="display:inline-block; margin-left: 16px;" href="#devices_web_Various_browser_issues">Various browser issues</a><br>
+				<a style="display:inline-block; margin-left: 16px;" href="#devices_web_Images_not_displaying_white_squares_instead">Images not displaying (white squares instead)</a><br>
 
 
 				<a name="devices_web_User_interface_description"></a>
@@ -1932,6 +1934,19 @@
 					The web browsers limit how much data a given website can store (usually 5MB) and this error happens when attempting to write more data.
 					This usually happens when you have large map files with a lot of markers.
 					The best way to work around this issue at the moment is to make smaller map files with less markers, and delete the map files you're not using from the left menu.
+				</p>
+				<a name="devices_web_Various_browser_issues"></a>
+				<h2>Various browser issues</h2>
+				<p>
+					Right now, the only officially supported browser is Google Chrome.
+					The app is built with best effort support for other browsers as well without any guarantee.
+				</p>
+				<a name="devices_web_Images_not_displaying_white_squares_instead"></a>
+				<h2>Images not displaying (white squares instead)</h2>
+				<p>
+					This can happen if your browser has a setting of blocking third-party content.
+					Since images are coming from Google Drive (drive.google.com) instead of mapmarker.app, the browser with third party content blocked might block this, resulting in images displayed as white squares.
+					To fix this on Google Chrome, go to the browser settings and change the settings under "Cookies and other site data" to allow third party cookies on mapmarker.app.
 				</p>
 			</div>
 		</div>
