@@ -156,6 +156,7 @@
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Premium_troubleshooting">Premium troubleshooting</a><br>
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Problems_with_corrupted_files_on_app_launch_code_14_SQLITE_CANTOPEN">Problems with corrupted files on app launch (code 14 SQLITE_CANTOPEN)</a><br>
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Problems_with_Google_Play_Services">Problems with Google Play Services</a><br>
+				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Problems_with_blocked_internet_access">Problems with blocked internet access</a><br>
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Collecting_log_files_when_encountering_errors">Collecting log files when encountering errors</a><br>
 
 
@@ -815,6 +816,33 @@
 					<li>CLEAR STORAGE</li>
 					<li>CLEAR ALL DATA</li>
 				</ol>
+
+				<a name="devices_android_Problems_with_blocked_internet_access"></a>
+				<h2>Problems with blocked internet access</h2>
+				<p>
+					In some cases, even though your device has correct internet access, the system can block internet access to Map Marker,
+					preventing the app from accessing internet, and preventing sync and causing the map not to load.
+					This can be caused by battery savers and/or incorrect system parameters.
+					If that happens, you can try the following steps to troubleshoot:
+				</p>
+				<ul>
+					<li>Check for any power-saving / network blocking apps and ensure that Map Marker is allowed to use the network</li>
+					<li>If that doesn't work, reset your network settings:</li>
+					<ol>
+						<li>Open the system settings</li>
+						<li>Navigate to network settings</li>
+						<li>Select "Reset network settings"</li>
+						<li>Restart your device</li>
+					</ol>
+					<li>If that doesn't work, back-up your data and re-install the app:</li>
+					<ol>
+						<li><a href="#devices_android_How_to_exportshare_your_markers">Export your markers</a></li>
+						<li><a href="#devices_android_How_to_exportshare_your_markers">Import your markers</a> back to another device to confirm that the backup worked</li>
+						<li>Once you're confident your data is safely backed-up, uninstall the app</li>
+						<li>Restart your device</li>
+						<li>Install the app again</li>
+					</ol>
+				</ul>
 
 				<a name="devices_android_Collecting_log_files_when_encountering_errors"></a>
 				<h2>Collecting log files when encountering errors</h2>
