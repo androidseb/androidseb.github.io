@@ -156,6 +156,7 @@
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Premium_troubleshooting">Premium troubleshooting</a><br>
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Problems_with_corrupted_files_on_app_launch_code_14_SQLITE_CANTOPEN">Problems with corrupted files on app launch (code 14 SQLITE_CANTOPEN)</a><br>
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Problems_with_Google_Play_Services">Problems with Google Play Services</a><br>
+				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Problems_with_map_display_blank_map">Problems with map display: blank map</a><br>
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Problems_with_blocked_internet_access">Problems with blocked internet access</a><br>
 				<a style="display:inline-block; margin-left: 16px;" href="#devices_android_Collecting_log_files_when_encountering_errors">Collecting log files when encountering errors</a><br>
 
@@ -807,7 +808,7 @@
 				<a name="devices_android_Problems_with_Google_Play_Services"></a>
 				<h2>Problems with Google Play Services</h2>
 				<p>
-					Some problems with the Google Play Services app can prevent the map display from loading.
+					Some problems with the Google Play Services app can cause various issues with Google-related services.<br>
 					Sometimes, you can fix this by clearing the Google Play Services app data:
 				</p>
 				<ol>
@@ -817,6 +818,31 @@
 					<li>Storage</li>
 					<li>CLEAR STORAGE</li>
 					<li>CLEAR ALL DATA</li>
+				</ol>
+
+				<a name="devices_android_Problems_with_map_display_blank_map"></a>
+				<h2>Problems with map display: blank map</h2>
+				<p>
+					Some problems with the Google Maps component can prevent the map display from loading properly, resulting in an empty blank map.<br>
+					Sometimes you can fix this by <a href="#devices_android_Problems_with_Google_Play_Services">clearing the Google Play Services app data</a>.<br>
+					Unfortunaltey sometimes this will not be enough and you will need to clear the app data completely to resolve the issue.
+					Since clearing the app data will result in all your markers being deleted, you have to careful follow these steps to avoid losing your data:
+				</p>
+				<ol>
+					<li>Export your markers as a KMZ file</li>
+					<li>Copy the KMZ file to an other device</li>
+					<li>Confirm you can import back your markers from the KMZ file</li>
+					<li><b>Keep the KMZ file in a safe location</b></li>
+					<li><b>ONLY after your markers data is secured</b>, proceed with next steps</li>
+					<li>Turn on the problematic device</li>
+					<li>Open the system settings</li>
+					<li>Applications</li>
+					<li>Map Marker</li>
+					<li>Storage</li>
+					<li>CLEAR STORAGE</li>
+					<li>CLEAR ALL DATA</li>
+					<li>Restart the app</li>
+					<li>Import your markers back from the KMZ file</li>
 				</ol>
 
 				<a name="devices_android_Problems_with_blocked_internet_access"></a>
